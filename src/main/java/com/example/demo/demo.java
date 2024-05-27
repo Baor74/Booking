@@ -9,4 +9,13 @@ public class demo {
     public String demo1(){
         return "detail";
     }
+    @RequestMapping("/hoatdong")
+  	public String hoatdong()
+  	{
+  		return"hoatdong"; 
+  	}
+  	@RequestMapping("/vungtau")
+  	public String vungtau() {
+  		return"vungtau"; 
+  	}
 }
