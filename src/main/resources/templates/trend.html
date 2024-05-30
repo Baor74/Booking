@@ -1,727 +1,2142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-<link
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="TechyDevs"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Trizen - Travel Booking HTML Template</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous">
-<link rel="stylesheet" href="../static/index.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet"/>
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css"/>
+    <link rel="stylesheet" href="../static/css/style_trend.css"/>
+</head>
 <body>
-<style>
-    body {
-        overflow-x: hidden;
-    }
 
-    .btn-dangky {
-        color: #ff567d;
-        border-color: #ff567d;
-        font-size: 12px;
-    }
+<!--<div class="preloader" id="preloader">-->
+<!--    <div class="loader">-->
+<!--        <svg class="spinner" viewBox="0 0 50 50">-->
+<!--            <circle-->
+<!--                    class="path"-->
+<!--                    cx="25"-->
+<!--                    cy="25"-->
+<!--                    r="20"-->
+<!--                    fill="none"-->
+<!--                    stroke-width="5"-->
+<!--            ></circle>-->
+<!--        </svg>-->
+<!--    </div>-->
+<!--</div>-->
 
-    .btn-dangky:hover {
-        background-color: #ff567d;
-        color: white;
-    }
-
-    .btn-dangnhap {
-        font-size: 12px;
-        color: rgb(135, 179, 251);
-    }
-
-    .btn-dangnhap:hover {
-        color: white;
-        background-color: rgb(135, 179, 251);
-    }
-
-    .btn-taotk {
-        font-size: 12px;
-        border-color: rgb(135, 179, 251);
-        color: rgb(135, 179, 251);
-    }
-
-    .btn-taotk:hover {
-        color: white;
-        background-color: rgb(135, 179, 251);
-    }
-    .input-search::placeholder {
-        color: white;
-    }
-    .valuee::placeholder {
-        color: white;
-    }
-    input[type="datetime-local"]::-webkit-datetime-edit-text {
-        color:white; /* Màu chữ bạn muốn áp dụng cho trường datetime-local */
-    }
-    input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-        filter: invert(100%); /* Đảo ngược màu của biểu tượng lịch */
-    }
-    .search{
-        position: relative;
-        transform: translateY(-300px);
-        z-index: 1;
-        width: 70%;
-        left: 15%;
-    }
-    .search-content-items{
-        background-color: #00000094;
-    }
-    .search-content-item{
-        height: 50px;
-        width: 21%;
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-    .search-content-item>input{
-        position: absolute;
-        margin-left: -10px;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding-left: 36px;
-        width: 120%;
-        height: 100%;
-        border: none;
-    }
-    .search-content-item>i{
-        z-index: 1;
-    }
-    .search-content-item:last-child{
-        width: 130px;
-    }
-    .autobox{
-        position: absolute;
-        top: 100%;
-        background-color: #00000094;
-        width: 145%;
-        overflow-y: auto;
-    }
-    .autobox>li {
-        list-style: none;
-        padding: 6px 0 6px 36px;
-        display: none;
-    }
-    .autobox.active li{
-        display: block;
-    }
-    .timkiem > a{
-        height: 50px;
-        width: 150px;
-    }
-    .timkiem p {
-        margin-top: 3px;
-    }
-    @media (max-width:500px) {
-        .search{
-            position: relative;
-            transform: translateY(0px);
-            z-index: 1;
-            width: 100%;
-            left: 0px;
-        }
-        .search-content-items{
-            justify-content: space-evenly;
-            background-color: white;
-            border-bottom: 1px  solid gray;
-            border-top: 1px  solid gray;
-        }
-        .col-auto >{
-            width: 200px;
-        }
-        .search-content-item>input{
-            position: absolute;
-            margin-left: -5px;
-            background-color: rgba(0, 0, 0, 0.5);
-            width: 140%;
-            height: 100%;
-            border: none;
-            padding-left: 35px;
-            border-radius: 5px;
-        }
-        .search-content-item>i{
-            position: absolute;
-            margin-right: 12px;
-            left: 5px;
-            z-index: 1;
-        }
-        .col-md-2{
-            margin-bottom: 6px;
-        }
-
-        .timkiem > a{
-            width: 360px;
-        }
-    }
-
-    /* footer */
-    footer{
-        background-color: #303036;
-        padding-top: 60px;
-        padding-bottom: 30px;
-    }
-    .main__footer{
-        width: 85%;
-        margin: 0 auto;
-        position: relative;
-    }
-    .main__ins{
-        position: relative;
-        margin-bottom: 80px;
-    }
-    .slide__ins img{
-        object-fit: cover;
-        border-radius: 10px;
-        width: 200px;
-    }
-    .btn__follow{
-        position: absolute;
-        width: 250px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-    }
-    .btn__follow h5{
-        position: relative;
-        padding: 12px 0;
-        font-family: "playfair display";
-        font-size: 16px;
-        color: #1a1a1a;
-        border-radius: 10px;
-        text-align: center;
-        font-weight: 400;
-        background-color: #fff;
-        box-shadow: 0 0 50px #00000080;
-    }
-    .btn__follow h5::before{
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        bottom: -5px;
-        right: -5px;
-        border: 1px solid #fff;
-        border-radius: 10px;
-    }
-
-    .footer__content{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .footer__about,
-    .newsletter{
-        width: 30%;
-    }
-    .footer__link{
-        width: 16.667%;
-    }
-    .footer__about img{
-        width:360px;
-    }
-    .footer__about p{
-        color: #fff;
-        line-height: 24px;
-        margin: 20px 0;
-    }
-    .footer__about ul li{
-        font-size: 16px;
-        color: #fff;
-        margin-bottom: 5px;
-    }
-
-    .footer__link h3,
-    .newsletter h3{
-        color: #fff;
-        padding-bottom: 10px;
-        position: relative;
-        margin-bottom: 20px;
-    }
-    .footer__link h3::before,
-    .newsletter h3::before{
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 110px;
-        height: 2px;
-        background-color: #fff;
-    }
-    .footer__link ul li a{
-        color: #fff;
-    }
-    .footer__link ul li{
-        margin-bottom: 20px;
-    }
-    .newsletter p{
-        font-size: 16px;
-        color: #fff;
-        line-height: 24px;
-        margin-bottom: 20px;
-    }
-    .form-sub{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .form-sub input{
-        width: 60%;
-        height: 50px;
-        color: #777777;
-        padding-left: 20px;
-        border: 1px solid #f1f1f1;
-        border-radius: 10px;
-        outline: none;
-    }
-    .form-sub button{
-        width: 38%;
-        position: relative;
-        background-color: #029e9d;
-        border-radius: 10px;
-        font-size: 14px;
-        color: #fff;
-        padding: 14px 24px;
-        box-shadow: 0 0 0 4px #ffffff1a;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        z-index: 1;
-    }
-    .form-sub button::before{
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 100%;
-        border-radius: 10px;
-        left: 0;
-        top: 0;
-        background-color: #fdc703;
-        transition: all ease-in-out 0.5s;
-        z-index: -1;
-    }
-    .form-sub button:hover::before{
-        width: 100%;
-        transition: all ease-in-out 0.5s;
-    }
-
-    .footer__payment{
-        margin-top: 50px;
-    }
-    .payment__support ul{
-        display: flex;
-        gap: 5px;
-    }
-
-    .payment__support ul li{
-        color: #fff;
-        font-size: 16px;
-    }
-    .payment__support ul li i{
-        font-size: 24px;
-    }
-
-    .copyright{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px;
-        border-radius: 10px;
-        background-color: #fbfbfb12;
-        margin-top: 30px;
-    }
-    .copyright__text p{
-        color: #fff;
-    }
-    .social__link ul{
-        display: flex;
-        gap: 5px;
-    }
-    .social__link ul li a{
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: #ffffff26;
-        display: block;
-        text-align: center;
-        line-height: 40px;
-    }
-    .social__link ul li i{
-        color: #fff;
-    }
-    .social__link ul li a:hover{
-        background-color: #029e9d;
-        transition: all linear 0.3s;
-    }
-    @media (max-width:500px) {
-        .slide__ins{
-            display: none;
-        }
-        .btn__follow{
-            margin-top: -170px;
-        }
-        .image{
-            margin-top: -100px;
-            margin-left: -13%;
-        }
-        .footer__about .titlee{
-            width: 370px;
-            margin-left: -15px;
-        }
-        .footer__about ul{
-            width: 400px;
-            margin-left: -50px;
-        }
-        .footer__link{
-            margin-top: 370px;
-            width: 120px;
-        }
-        .newsletter h3{
-            width: 350px;
-        }
-        .link1{
-            margin-left: -110px;
-        }
-        .link2{
-            margin-left: 80px;
-        }
-        .newsletter p{
-            width: 350px;
-        }
-        .form-sub input {
-            width: 250px;
-        }
-        .form-sub button{
-            margin-top: 20px;
-            width: 250px;
-        }
-    }
-</style>
-<nav class=" navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href=""> <img
-                class="light-mode-item navbar-brand-item ms-3"
-                src="img/KQ-TOURS.png" width="70px" alt="logo">
-        </a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-2"
-                style="font-size: 12px;">
-                <li class="nav-item"><a class="nav-link fw-bold" href="/index">
-                    Máy bay + K.sạn</a></li>
-                <li class="nav-item"><a class="nav-link fw-bold" href="#">
-                    Chỗ ở</a></li>
-                <li class="nav-item"><a class="nav-link fw-bold" href="#">
-                    Phương tiện di chuyển</a></li>
-                <li class="nav-item"><a class="nav-link fw-bold" href="#">
-                    Hoạt động</a></li>
-                <li class="nav-item"><a class="nav-link fw-bold" href="/item">
-                    Phiếu giảm giá và ưu đãi</a></li>
-                <li class="nav-item"><a class="nav-link fw-bold" href="#">
-                    eSIM</a></li>
-            </ul>
-        </div>
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <i class="bi bi-grid-3x3-gap-fill"></i>
-        </button>
-        <div class="offcanvas offcanvas-end d-md-none" tabindex="-1"
-             id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <a class="navbar-brand" href=""> <img
-                        class="light-mode-item navbar-brand-item ms-4" src="/templates/img/logo.svg"
-                        width="100px" alt="logo">
-                </a>
-                <div class="close-menu ms-auto">
-                    <button class="btn-close" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                </div>
+<header class="header-area">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="#"><img src="../static/img/logo.png"
+                                 style="width: 100px;"/></a>
             </div>
-            <hr>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#">
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-nav-scroll ms-5 ">
+                    <li class="nav-item"><a class="nav-link" href="/index">
                         Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#">
-                        Về chúng tôi</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#">
-                        Blog</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#">
-                        Cửa hàng</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#">
-                        Liên hệ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> Máy
+                        bay & Khách sạn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> Chỗ ở</a></li>
+                    <li class="main-menu-content nav-item">
+                        <nav>
+                            <ul>
+                                <li><a class="nav-link" href="#">Phương tiện <i
+                                    class="la la-angle-down"></i></a>
+                                    <ul class="dropdown-menu-item">
+                                        <li><a href="#">Chuyến bay</a></li>
+                                        <li><a href="#">Xe buýt</a></li>
+                                        <li><a href="#">Tàu hỏa</a></li>
+                                        <li><a href="#">Phà</a></li>
+                                        <li><a href="#">Taxi sân bay</a></li>
+                                        <li><a href="#">Thuê xe</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#"> Hoạt
+                        động</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/item"> Ưu
+                        đãi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> Liên
+                        hệ</a></li>
                 </ul>
             </div>
-        </div>
-        <button type="button" class="btn btn-dangky">Đăng ký cho
-            thuê nhà</button>
-        <ul class="nav ms-4">
-            <li class="nav-item"><a class="navbar-brand " href=""> <img
-                    class="light-mode-item navbar-brand-item" src="/templates/img/icon.png"
-                    width="20px" alt="logo">
-            </a></li>
-            <li class="nav-item"><a class="nav-link" href="#"
-                                    style="font-size: 13px; margin-left: -27px"> VN </a></li>
-            <li class="nav-item"><a class="nav-link" href="#"
-                                    style="font-size: 13px; margin-left: -25px"> EN </a></li>
-        </ul>
-        <button type="button" class="btn btn-dangnhap ">Đăng nhập</button>
-        <button type="button" class="btn btn-taotk ms-3">Tạo tài
-            khoản</button>
-    </div>
-</nav>
-<div class="">
-    <img src="img/bg.jpg" class="d-block w-100" style="max-height: 540px;">
-    <div class="search rounded-top-3">
-        <div class="wraper ">
-            <div
-                    class="search-content-items row justify-content-between p-3 rounded">
-                <div class="col-md-2 col-6">
-                    <div class="search-content-item ">
-                        <i class="bi bi-geo-alt-fill text-warning "></i> <input
-                            class="input-search text-light rounded" type="text"
-                            placeholder="Bạn muốn đi đâu?">
-                    </div>
-                </div>
-                <div class="col-md-2 col-6">
-                    <div class="search-content-item">
-                        <i class="bi bi-airplane text-warning"></i> <input
-                            class="input-search text-light rounded" type="text"
-                            placeholder="Tour trong nước">
-                    </div>
-                </div>
-                <div class=" col-md-2 col-6">
-                    <div class="search-content-item">
-                        <i class="bi bi-geo-alt-fill text-warning "></i> <input
-                            class="input-search text-light rounded" type="text"
-                            placeholder="Nơi khởi hành">
-                    </div>
-                </div>
-                <div class="col-md-2 col-6">
-                    <div class="search-content-item">
-                        <i class="bi bi-calendar-check text-warning"></i> <input
-                            class="myID text-light rounded" type="datetime-local">
-                    </div>
-                </div>
-                <div class="timkiem col-auto ">
-                    <a href="#!search" class="btn btn-search">
-                        <p class="fs-6 text-light mt-2">
-                            <i class="bi bi-search"></i> Tìm kiếm
-                        </p>
-                    </a>
-                </div>
+            <div class="header-right-action">
+                <a href="#"
+                   class="theme-btn theme-btn-small theme-btn-transparent me-1 text-decoration-none"
+                   style="border: none" data-bs-toggle="modal"
+                   data-bs-target="#signupPopupForm">Tạo tài khoản</a> <a href="#"
+                                                                          class="theme-btn theme-btn-small text-decoration-none"
+                                                                          data-bs-toggle="modal"
+                                                                          data-bs-target="#loginPopupForm">Đăng
+                nhập</a> <a class="ms-4" href="/cart"><i class="bi bi-cart2"
+                                                         style="color: gray;"></i></a>
+
             </div>
         </div>
-    </div>
-    <div class="container" style="margin-top: -50px; margin-left: 100px;">
-        <h4 class="fw-bold ">
-            <a class="text-decoration-none text-dark" href="">10 khách sạn
-                tốt nhất ở Vũng Tàu</a>
-        </h4>
-        <div class="row ">
-            <div class=" col-md-2 col-lg-2 col-sm-12 ">
-                <div class="simplebar-content rounded p-3"
-                     style="border: 1px solid gray;">
-                    <h5>Đánh giá sao</h5>
-                    <div class="form-check ">
-                        <input type="checkbox" id="subcat-0" class="form-check-input"
-                               value="Khách Sạn"> <label title="" for="subcat-0"
-                                                         class="form-check-label"> <span class="fs-sm">5
-									sao</span>
-                    </label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="subcat-1" class="form-check-input"
-                               value="Nhà trọ"> <label title="" for="subcat-1"
-                                                       class="form-check-label"> <span class="fs-sm">4
-									sao</span>
-                    </label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="subcat-2" class="form-check-input"
-                               value="Nhà nghỉ"> <label title="" for="subcat-2"
-                                                        class="form-check-label"> <span class="fs-sm">3
-									sao</span>
-                    </label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="subcat-4" class="form-check-input"
-                               value="Căn hộ"> <label title="" for="subcat-4"
-                                                      class="form-check-label"> <span class="fs-sm">2
-									sao</span>
-                    </label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="subcat-5" class="form-check-input"
-                               value="Khách sạn nhỏ"> <label title="" for="subcat-5"
-                                                             class="form-check-label"> <span class="fs-sm">1
-									sao</span>
-                    </label>
-                    </div>
+    </nav>
+</header>
 
-                    <h5>Điểm đánh giá</h5>
-                    <div class="form-check ">
-                        <input type="checkbox" id="subcat-0" class="form-check-input"
-                               value="Khách Sạn"> <label title="" for="subcat-0"
-                                                         class="form-check-label"> <span class="fs-sm">Trên
-									cả tuyệt vời 9+</span>
-                    </label>
+<section class="hero-wrapper">
+    <div class="hero-box hero-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto responsive--column-l">
+                    <h2 class="text-light text-center">RONG CHƠI BỐN PHƯƠNG, GIÁ
+                        VẪN "YÊU THƯƠNG"</h2>
+                    <div class="section-tab text-center">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item"><a
+                                class="nav-link d-flex align-items-center active"
+                                id="flight-tab" data-bs-toggle="tab" href="#flight" role="tab"
+                                aria-controls="flight" aria-selected="true"> <i
+                                class="la la-plane me-1"></i>Chuyến bay
+                            </a></li>
+                            <li class="nav-item"><a
+                                class="nav-link d-flex align-items-center" id="hotel-tab"
+                                data-bs-toggle="tab" href="#hotel" role="tab"
+                                aria-controls="hotel" aria-selected="false"> <i
+                                class="la la-hotel me-1"></i>Khách sạn
+                            </a></li>
+                            <li class="nav-item"><a
+                                class="nav-link d-flex align-items-center" id="package-tab"
+                                data-bs-toggle="tab" href="#package" role="tab"
+                                aria-controls="package" aria-selected="false"> <i
+                                class="la la-shopping-bag me-1"></i>Đặt gói tiết kiệm
+                            </a></li>
+                            <li class="nav-item"><a
+                                class="nav-link d-flex align-items-center" id="car-tab"
+                                data-bs-toggle="tab" href="#car" role="tab" aria-controls="car"
+                                aria-selected="true"> <i class="la la-car me-1"></i>Đưa đón
+                            </a></li>
+                            <li class="nav-item"><a
+                                class="nav-link d-flex align-items-center" id="cruise-tab"
+                                data-bs-toggle="tab" href="#cruise" role="tab"
+                                aria-controls="cruise" aria-selected="false"> <i
+                                class="la la-ship me-1"></i>Du thuyền
+                            </a></li>
+                            <li class="nav-item"><a
+                                class="nav-link d-flex align-items-center" id="tour-tab"
+                                data-bs-toggle="tab" href="#tour" role="tab"
+                                aria-controls="tour" aria-selected="false"> <i
+                                class="la la-globe me-1"></i>Hoạt động
+                            </a></li>
+                        </ul>
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="subcat-1" class="form-check-input"
-                               value="Nhà trọ"> <label title="" for="subcat-1"
-                                                       class="form-check-label"> <span class="fs-sm">Rất
-									tốt 8+</span>
-                    </label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="subcat-2" class="form-check-input"
-                               value="Nhà nghỉ"> <label title="" for="subcat-2"
-                                                        class="form-check-label"> <span class="fs-sm">Tốt
-									7+</span>
-                    </label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="subcat-4" class="form-check-input"
-                               value="Căn hộ"> <label title="" for="subcat-4"
-                                                      class="form-check-label"> <span class="fs-sm">Dễ
-									chịu 6+</span>
-                    </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-10 col-lg-10 col-sm-12">
-                <div class="row">
-                    <div class="card" style="width: 900px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="img/sp1.webp" class="rounded p-3 " width="300px" alt="...">
+                    <div class="tab-content search-fields-container" id="myTabContent">
+                        <div class="tab-pane fade show active" id="flight"
+                             role="tabpanel" aria-labelledby="flight-tab">
+                            <div class="section-tab section-tab-2 pb-3">
+                                <ul class="nav nav-tabs" id="myTab3" role="tablist">
+                                    <li class="nav-item"><a class="nav-link active"
+                                                            id="one-way-tab" data-bs-toggle="tab" href="#one-way"
+                                                            role="tab" aria-controls="one-way" aria-selected="true">
+                                        Một chiều </a></li>
+                                    <li class="nav-item"><a class="nav-link"
+                                                            id="round-trip-tab" data-bs-toggle="tab"
+                                                            href="#round-trip"
+                                                            role="tab" aria-controls="round-trip"
+                                                            aria-selected="false">
+                                        Khứ hồi </a></li>
+                                </ul>
                             </div>
-                            <div class="col-md-6 border-end">
-                                <div class="card-body">
-                                    <div class="onsale">
-                                        <span class="badge bg-danger">Giá sốc</span>
+                            <div class="tab-content" id="myTabContent3">
+                                <div class="tab-pane fade show active" id="one-way"
+                                     role="tabpanel" aria-labelledby="one-way-tab">
+                                    <div class="contact-form-action">
+                                        <form action="#" class="row align-items-center">
+                                            <div class="col-lg-6 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Bay từ</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="City or airport"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="input-box">
+                                                    <label class="label-text">Bay tới</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="City or airport"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Khởi hành</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-calendar form-icon"></span> <input
+                                                        class="date-range form-control" type="datetime-local"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Hành khách</label>
+                                                    <div class="form-group">
+                                                        <div class="dropdown dropdown-contain gty-container">
+                                                            <a class="dropdown-toggle dropdown-btn" href="#"
+                                                               role="button" data-bs-toggle="dropdown"
+                                                               aria-expanded="false"> <span class="adult"
+                                                                                            data-text="Adult"
+                                                                                            data-text-multi="Adults">0
+																		Adult</span> - <span class="children" data-text="Child"
+                                                         data-text-multi="Children">0 Child</span>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-wrap">
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Adults</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="adult_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Children</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="child_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Infants</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="infants_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Giảm giá</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href="#"
+                                                   class="theme-btn w-100 text-center margin-top-20px">Tìm
+                                                    chuyến bay</a>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <h5 class="card-title text-success">Phòng khách, Vũng Tàu
-                                        The Song Apartment - Paris Homestay</h5>
-                                    <p class="card-text">
-                                        <i class="bi bi-star-fill text-warning"></i><i
-                                            class="bi bi-star-fill text-warning"></i><i
-                                            class="bi bi-star-fill text-warning"></i><i
-                                            class="bi bi-star-fill text-warning"></i><i
-                                            class="bi bi-star-fill text-warning"></i> <i
-                                            class="bi bi-geo-alt-fill text-primary"></i> Thắng Tam,Vũng
-                                        Tàu - Xem trên bản đồ
-                                    </p>
-                                    <div class="d-flex">
-                                        <p class="card-text border"
-                                           style="width: 80px; font-size: 10px;">Đưa đón sân bay</p>
-                                        <p class="card-text border ms-3"
-                                           style="width: 60px; font-size: 10px;">Thuê xe đạp</p>
-                                        <p class="card-text border ms-3"
-                                           style="width: 20px; font-size: 10px; height: 17px;">+6</p>
+                                </div>
+                                <div class="tab-pane fade" id="round-trip" role="tabpanel"
+                                     aria-labelledby="round-trip-tab">
+                                    <div class="contact-form-action">
+                                        <form action="#" class="row align-items-center">
+                                            <div class="col-lg-6 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Bay từ</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="City or airport"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="input-box">
+                                                    <label class="label-text">Bay tới</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="City or airport"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Khởi hành</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-calendar form-icon"></span> <input
+                                                        class="date-range form-control" type="datetime-local" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Hành khách</label>
+                                                    <div class="form-group">
+                                                        <div class="dropdown dropdown-contain gty-container">
+                                                            <a class="dropdown-toggle dropdown-btn" href="#"
+                                                               role="button" data-bs-toggle="dropdown"
+                                                               aria-expanded="false"> <span class="adult"
+                                                                                            data-text="Adult"
+                                                                                            data-text-multi="Adults">0
+																		Adult</span> - <span class="children" data-text="Child"
+                                                         data-text-multi="Children">0 Child</span>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-wrap">
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Adults</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="adult_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Children</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="child_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Infants</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="infants_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end col-lg-3 -->
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Giảm giá</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="text"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <a href="#"
+                                                   class="theme-btn w-100 text-center margin-top-20px">Tìm
+                                                    chuyến bay</a>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2 text-end">
-                                <p class="card-title ms-3 mt-3" style="font-size: 12px">Trên cả tuyệt vời</p>
-                                <p class="card-title ms-3 " style="font-size: 12px">627 nhận xét</p>
-                                <p class="card-title fw-bold mt-4 " style="font-size: 12px">Giá trung bình mỗi đêm</p>
-                                <h6 class="card-title text-danger">720.709 VNĐ</h6>
-                                <a href="#" class="btn btn-primary ms-3" style="font-size: 15px; border: none;background-color: rgb(83, 146, 249);">Kiểm tra lượng phòng trống</a>
+                        </div>
+                        <div class="tab-pane fade" id="hotel" role="tabpanel"
+                             aria-labelledby="hotel-tab">
+                            <div class="contact-form-action">
+                                <form action="#" class="row align-items-center">
+                                    <div class="col-lg-3 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Tên điểm đến/khách sạn</label>
+                                            <div class="form-group">
+                                                <span class="la la-map-marker form-icon"></span> <input
+                                                class="form-control" type="text"
+                                                placeholder="Enter city or property"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Check in</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span> <input
+                                                class="date-range form-control" type="datetime-local" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Check out</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span> <input
+                                                class="date-range form-control" type="datetime-local" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="input-box">
+                                            <label class="label-text">Khách và Phòng</label>
+                                            <div class="form-group">
+                                                <div class="dropdown dropdown-contain gty-container">
+                                                    <a class="dropdown-toggle dropdown-btn" href="#"
+                                                       role="button" data-bs-toggle="dropdown"
+                                                       aria-expanded="false"> <span class="adult"
+                                                                                    data-text="Adult"
+                                                                                    data-text-multi="Adults">0 Người
+																lớn</span> - <span class="children" data-text="Child"
+                                                   data-text-multi="Children">0 Trẻ em</span>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-wrap">
+                                                        <div class="dropdown-item">
+                                                            <div
+                                                                class="qty-box d-flex align-items-center justify-content-between">
+                                                                <label>Rooms</label>
+                                                                <div class="qtyBtn d-flex align-items-center">
+                                                                    <div class="qtyDec">
+                                                                        <i class="la la-minus"></i>
+                                                                    </div>
+                                                                    <input type="text" name="room_number" value="0"
+                                                                           class="qty-input"/>
+                                                                    <div class="qtyInc">
+                                                                        <i class="la la-plus"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dropdown-item">
+                                                            <div
+                                                                class="qty-box d-flex align-items-center justify-content-between">
+                                                                <label>Adults</label>
+                                                                <div class="qtyBtn d-flex align-items-center">
+                                                                    <div class="qtyDec">
+                                                                        <i class="la la-minus"></i>
+                                                                    </div>
+                                                                    <input type="text" name="adult_number" value="0"/>
+                                                                    <div class="qtyInc">
+                                                                        <i class="la la-plus"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dropdown-item">
+                                                            <div
+                                                                class="qty-box d-flex align-items-center justify-content-between">
+                                                                <label>Children</label>
+                                                                <div class="qtyBtn d-flex align-items-center">
+                                                                    <div class="qtyDec">
+                                                                        <i class="la la-minus"></i>
+                                                                    </div>
+                                                                    <input type="text" name="child_number" value="0"/>
+                                                                    <div class="qtyInc">
+                                                                        <i class="la la-plus"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="btn-box">
+                                <a href="#" class="theme-btn">Tìm kiếm </a>
+                            </div>
+                        </div>
+                        <!-- end tab-pane -->
+                        <div class="tab-pane fade" id="package" role="tabpanel"
+                             aria-labelledby="package-tab">
+                            <div class="section-tab section-tab-2 pb-3">
+                                <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                                    <li class="nav-item"><a class="nav-link active"
+                                                            id="flight-hotel-tab" data-bs-toggle="tab"
+                                                            href="#flight-hotel" role="tab"
+                                                            aria-controls="flight-hotel"
+                                                            aria-selected="true"> Chuyến bay + Khách sạn </a></li>
+                                    <li class="nav-item"><a class="nav-link"
+                                                            id="flight-hotel-car-tab" data-bs-toggle="tab"
+                                                            href="#flight-hotel-car" role="tab"
+                                                            aria-controls="flight-hotel-car" aria-selected="false">
+                                        Chuyến bay + Khách sạn + Xe hơi </a></li>
+                                    <li class="nav-item"><a class="nav-link"
+                                                            id="flight-car-tab" data-bs-toggle="tab"
+                                                            href="#flight-car"
+                                                            role="tab" aria-controls="flight-car"
+                                                            aria-selected="false">
+                                        Chuyến bay + Ô tô </a></li>
+                                    <li class="nav-item"><a class="nav-link"
+                                                            id="hotel-car-tab" data-bs-toggle="tab" href="#hotel-car"
+                                                            role="tab" aria-controls="hotel-car" aria-selected="true">
+                                        Khách sạn + Xe hơi </a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-content" id="myTabContent2">
+                                <div class="tab-pane fade show active" id="flight-hotel"
+                                     role="tabpanel" aria-labelledby="flight-hotel-tab">
+                                    <div class="contact-form-action">
+                                        <form action="#" class="row align-items-center">
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Bay từ</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="Thành phố hoặc sân bay"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Bay tới</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="Thành phố hoặc sân bay"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Đi - Về</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-calendar form-icon"></span> <input
+                                                        class="date-range form-control" type="datetime-local" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="input-box">
+                                                    <label class="label-text">Khách và Phòng</label>
+                                                    <div class="form-group">
+                                                        <div class="dropdown dropdown-contain gty-container">
+                                                            <a class="dropdown-toggle dropdown-btn" href="#"
+                                                               role="button" data-bs-toggle="dropdown"
+                                                               aria-expanded="false"> <span class="adult"
+                                                                                            data-text="Adult"
+                                                                                            data-text-multi="Adults">0
+																		Adult</span> - <span class="children" data-text="Child"
+                                                         data-text-multi="Children">0 Child</span>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-wrap">
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Rooms</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="room_number" value="0"
+                                                                                   class="qty-input"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Adults</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="adult_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Children</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="child_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="checkmark-wrap">
+                                        <div class="custom-checkbox d-inline-block mb-0 me-3">
+                                            <input type="checkbox" class="form-check-input"
+                                                   id="directFlightChb"/> <label for="directFlightChb">Chỉ
+                                            các chuyến bay trực tiếp </label>
+                                        </div>
+                                        <div class="custom-checkbox d-inline-block mb-0">
+                                            <input type="checkbox" class="form-check-input"
+                                                   id="onlyHotelChb"/> <label for="onlyHotelChb">Tôi
+                                            chỉ cần một khách sạn cho một phần thời gian lưu trú của
+                                            tôi</label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-box pt-3">
+                                        <a href="activity-search-result.html" class="theme-btn">Tìm
+                                            kiếm</a>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="flight-hotel-car"
+                                     role="tabpanel" aria-labelledby="flight-hotel-car-tab">
+                                    <div class="contact-form-action">
+                                        <form action="#" class="row align-items-center">
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Bay từ</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        type="text" class="form-control"
+                                                        placeholder="City or airport"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Bay tới</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="City or airport"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Đi - Về</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-calendar form-icon"></span> <input
+                                                        class="date-range form-control" type="datetime-local" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="input-box">
+                                                    <label class="label-text">Khách và Phòng</label>
+                                                    <div class="form-group">
+                                                        <div class="dropdown dropdown-contain gty-container">
+                                                            <a class="dropdown-toggle dropdown-btn" href="#"
+                                                               role="button" data-bs-toggle="dropdown"
+                                                               aria-expanded="false"> <span class="adult"
+                                                                                            data-text="Adult"
+                                                                                            data-text-multi="Adults">0
+																		Adult</span> - <span class="children" data-text="Child"
+                                                         data-text-multi="Children">0 Child</span>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-wrap">
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Rooms</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="room_number" value="0"
+                                                                                   class="qty-input"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Adults</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="adult_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Children</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="child_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="checkmark-wrap">
+                                        <div class="custom-checkbox d-inline-block mb-0 me-3">
+                                            <input type="checkbox" class="form-check-input"
+                                                   id="directFlightChb2"/> <label for="directFlightChb2">Chỉ
+                                            các chuyến bay trực tiếp </label>
+                                        </div>
+                                        <div class="custom-checkbox d-inline-block mb-0">
+                                            <input type="checkbox" class="form-check-input"
+                                                   id="onlyHotelChb2"/> <label for="onlyHotelChb2">Tôi
+                                            chỉ cần một khách sạn cho một phần thời gian lưu trú của
+                                            tôi</label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-box pt-3">
+                                        <a href="#" class="theme-btn">Tìm
+                                            kiếm</a>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="flight-car" role="tabpanel"
+                                     aria-labelledby="flight-car-tab">
+                                    <div class="contact-form-action">
+                                        <form action="#" class="row align-items-center">
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Flying from</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="City or airport"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Flying to</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="City or airport"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Departing - Returning</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-calendar form-icon"></span> <input
+                                                        class="date-range form-control" type="datetime-local" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="input-box">
+                                                    <label class="label-text">Passengers</label>
+                                                    <div class="form-group">
+                                                        <div class="dropdown dropdown-contain gty-container">
+                                                            <a class="dropdown-toggle dropdown-btn" href="#"
+                                                               role="button" data-bs-toggle="dropdown"
+                                                               aria-expanded="false"> <span class="adult"
+                                                                                            data-text="Adult"
+                                                                                            data-text-multi="Adults">0
+																		Adult</span> - <span class="children" data-text="Child"
+                                                         data-text-multi="Children">0 Child</span>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-wrap">
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Rooms</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="room_number" value="0"
+                                                                                   class="qty-input"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Adults</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="adult_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Children</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="child_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="checkmark-wrap">
+                                        <div class="custom-checkbox d-inline-block mb-0">
+                                            <input type="checkbox" class="form-check-input"
+                                                   id="directFlightChb3"/> <label for="directFlightChb3">Direct
+                                            flights only</label>
+                                        </div>
+                                    </div>
+                                    <div class="btn-box pt-3">
+                                        <a href="#" class="theme-btn">Search Now</a>
+                                    </div>
+                                </div>
+                                <!-- end tab-pane -->
+                                <div class="tab-pane fade" id="hotel-car" role="tabpanel"
+                                     aria-labelledby="hotel-car-tab">
+                                    <div class="contact-form-action">
+                                        <form action="#" class="row align-items-center">
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Going to</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-map-marker form-icon"></span> <input
+                                                        class="form-control" type="text"
+                                                        placeholder="Enter City or property"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Check in - Check-out</label>
+                                                    <div class="form-group">
+                                                        <span class="la la-calendar form-icon"></span> <input
+                                                        class="date-range form-control" type="datetime-local" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 pe-0">
+                                                <div class="input-box">
+                                                    <label class="label-text">Room Type</label>
+                                                    <div class="form-group select2-container-wrapper">
+                                                        <div class="select-contain w-auto">
+
+                                                            <select class="form-select">
+                                                                <option value="0">Select Type</option>
+                                                                <option value="1">Single</option>
+                                                                <option value="2">Double</option>
+                                                                <option value="3">Triple</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <div class="input-box">
+                                                    <label class="label-text">Guests and Rooms</label>
+                                                    <div class="form-group">
+                                                        <div class="dropdown dropdown-contain gty-container">
+                                                            <a class="dropdown-toggle dropdown-btn" href="#"
+                                                               role="button" data-bs-toggle="dropdown"
+                                                               aria-expanded="false"> <span class="adult"
+                                                                                            data-text="Adult"
+                                                                                            data-text-multi="Adults">0
+																		Adult</span> - <span class="children" data-text="Child"
+                                                         data-text-multi="Children">0 Child</span>
+                                                            </a>
+                                                            <div class="dropdown-menu dropdown-menu-wrap">
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Rooms</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="room_number" value="0"
+                                                                                   class="qty-input"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Adults</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="adult_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item">
+                                                                    <div
+                                                                        class="qty-box d-flex align-items-center justify-content-between">
+                                                                        <label>Children</label>
+                                                                        <div class="qtyBtn d-flex align-items-center">
+                                                                            <div class="qtyDec">
+                                                                                <i class="la la-minus"></i>
+                                                                            </div>
+                                                                            <input type="text" name="child_number" value="0"/>
+                                                                            <div class="qtyInc">
+                                                                                <i class="la la-plus"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="btn-box pt-2">
+                                        <a href="#" class="theme-btn">Search Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="car" role="tabpanel"
+                             aria-labelledby="car-tab">
+                            <div class="contact-form-action">
+                                <form action="#" class="row align-items-center">
+                                    <div class="col-lg-4 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Picking up</label>
+                                            <div class="form-group">
+                                                <span class="la la-map-marker form-icon"></span> <input
+                                                class="form-control" type="text"
+                                                placeholder="City, airport or address"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Pick-up date</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span> <input
+                                                class="date-range form-control" type="datetime-local" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="input-box">
+                                            <label class="label-text">Time</label>
+                                            <div class="form-group select2-container-wrapper">
+                                                <div class="select-contain w-auto">
+                                                    <select class="form-select">
+                                                        <option value="1200AM">12:00AM</option>
+                                                        <option value="1230AM">12:30AM</option>
+                                                        <option value="0100AM">1:00AM</option>
+                                                        <option value="0130AM">1:30AM</option>
+                                                        <option value="0200AM">2:00AM</option>
+                                                        <option value="0230AM">2:30AM</option>
+                                                        <option value="0300AM">3:00AM</option>
+                                                        <option value="0330AM">3:30AM</option>
+                                                        <option value="0400AM">4:00AM</option>
+                                                        <option value="0430AM">4:30AM</option>
+                                                        <option value="0500AM">5:00AM</option>
+                                                        <option value="0530AM">5:30AM</option>
+                                                        <option value="0600AM">6:00AM</option>
+                                                        <option value="0630AM">6:30AM</option>
+                                                        <option value="0700AM">7:00AM</option>
+                                                        <option value="0730AM">7:30AM</option>
+                                                        <option value="0800AM">8:00AM</option>
+                                                        <option value="0830AM">8:30AM</option>
+                                                        <option value="0900AM" selected>9:00AM</option>
+                                                        <option value="0930AM">9:30AM</option>
+                                                        <option value="1000AM">10:00AM</option>
+                                                        <option value="1030AM">10:30AM</option>
+                                                        <option value="1100AM">11:00AM</option>
+                                                        <option value="1130AM">11:30AM</option>
+                                                        <option value="1200PM">12:00PM</option>
+                                                        <option value="1230PM">12:30PM</option>
+                                                        <option value="0100PM">1:00PM</option>
+                                                        <option value="0130PM">1:30PM</option>
+                                                        <option value="0200PM">2:00PM</option>
+                                                        <option value="0230PM">2:30PM</option>
+                                                        <option value="0300PM">3:00PM</option>
+                                                        <option value="0330PM">3:30PM</option>
+                                                        <option value="0400PM">4:00PM</option>
+                                                        <option value="0430PM">4:30PM</option>
+                                                        <option value="0500PM">5:00PM</option>
+                                                        <option value="0530PM">5:30PM</option>
+                                                        <option value="0600PM">6:00PM</option>
+                                                        <option value="0630PM">6:30PM</option>
+                                                        <option value="0700PM">7:00PM</option>
+                                                        <option value="0730PM">7:30PM</option>
+                                                        <option value="0800PM">8:00PM</option>
+                                                        <option value="0830PM">8:30PM</option>
+                                                        <option value="0900PM">9:00PM</option>
+                                                        <option value="0930PM">9:30PM</option>
+                                                        <option value="1000PM">10:00PM</option>
+                                                        <option value="1030PM">10:30PM</option>
+                                                        <option value="1100PM">11:00PM</option>
+                                                        <option value="1130PM">11:30PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form action="#" class="row align-items-center">
+                                    <div class="col-lg-4 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Drop-off</label>
+                                            <div class="form-group">
+                                                <span class="la la-map-marker form-icon"></span> <input
+                                                class="form-control" type="text"
+                                                placeholder="Same as pick-up"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Drop-off date</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span> <input
+                                                class="date-range form-control" type="datetime-local" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="input-box">
+                                            <label class="label-text">Time</label>
+                                            <div class="form-group select2-container-wrapper">
+                                                <div class="select-contain w-auto">
+                                                    <select class="form-select">
+                                                        <option value="1200AM">12:00AM</option>
+                                                        <option value="1230AM">12:30AM</option>
+                                                        <option value="0100AM">1:00AM</option>
+                                                        <option value="0130AM">1:30AM</option>
+                                                        <option value="0200AM">2:00AM</option>
+                                                        <option value="0230AM">2:30AM</option>
+                                                        <option value="0300AM">3:00AM</option>
+                                                        <option value="0330AM">3:30AM</option>
+                                                        <option value="0400AM">4:00AM</option>
+                                                        <option value="0430AM">4:30AM</option>
+                                                        <option value="0500AM">5:00AM</option>
+                                                        <option value="0530AM">5:30AM</option>
+                                                        <option value="0600AM">6:00AM</option>
+                                                        <option value="0630AM">6:30AM</option>
+                                                        <option value="0700AM">7:00AM</option>
+                                                        <option value="0730AM">7:30AM</option>
+                                                        <option value="0800AM">8:00AM</option>
+                                                        <option value="0830AM">8:30AM</option>
+                                                        <option value="0900AM" selected>9:00AM</option>
+                                                        <option value="0930AM">9:30AM</option>
+                                                        <option value="1000AM">10:00AM</option>
+                                                        <option value="1030AM">10:30AM</option>
+                                                        <option value="1100AM">11:00AM</option>
+                                                        <option value="1130AM">11:30AM</option>
+                                                        <option value="1200PM">12:00PM</option>
+                                                        <option value="1230PM">12:30PM</option>
+                                                        <option value="0100PM">1:00PM</option>
+                                                        <option value="0130PM">1:30PM</option>
+                                                        <option value="0200PM">2:00PM</option>
+                                                        <option value="0230PM">2:30PM</option>
+                                                        <option value="0300PM">3:00PM</option>
+                                                        <option value="0330PM">3:30PM</option>
+                                                        <option value="0400PM">4:00PM</option>
+                                                        <option value="0430PM">4:30PM</option>
+                                                        <option value="0500PM">5:00PM</option>
+                                                        <option value="0530PM">5:30PM</option>
+                                                        <option value="0600PM">6:00PM</option>
+                                                        <option value="0630PM">6:30PM</option>
+                                                        <option value="0700PM">7:00PM</option>
+                                                        <option value="0730PM">7:30PM</option>
+                                                        <option value="0800PM">8:00PM</option>
+                                                        <option value="0830PM">8:30PM</option>
+                                                        <option value="0900PM">9:00PM</option>
+                                                        <option value="0930PM">9:30PM</option>
+                                                        <option value="1000PM">10:00PM</option>
+                                                        <option value="1030PM">10:30PM</option>
+                                                        <option value="1100PM">11:00PM</option>
+                                                        <option value="1130PM">11:30PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="btn-box pt-3">
+                                <a href="#" class="theme-btn">Tìm kiếm ngay</a>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="cruise" role="tabpanel"
+                             aria-labelledby="cruise-tab">
+                            <div class="contact-form-action">
+                                <form action="#" class="row align-items-center">
+                                    <div class="col-lg-3 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Going to</label>
+                                            <div class="form-group select2-container-wrapper">
+                                                <div class="select-contain w-auto">
+                                                    <select class="form-select">
+                                                        <option value="">Select destination</option>
+                                                        <optgroup label="Most Popular">
+                                                            <option value="caribbean">Caribbean</option>
+                                                            <option value="bahamas">Bahamas</option>
+                                                        </optgroup>
+                                                        <optgroup label="Other Destinations">
+                                                            <option value="arctic-antarctic">Arctic</option>
+                                                            <option value="middle-east">Middle East</option>
+                                                            <option value="africa">Africa</option>
+                                                            <option value="panama-canal">Panama Canal</option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Departs as early as</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span> <input
+                                                class="date-range form-control" type="datetime-local" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Departs as late as</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span> <input
+                                                class="date-range form-control" type="datetime-local" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="input-box">
+                                            <label class="label-text">Travelers in the cabin</label>
+                                            <div class="form-group">
+                                                <div class="dropdown dropdown-contain gty-container">
+                                                    <a class="dropdown-toggle dropdown-btn" href="#"
+                                                       role="button" data-bs-toggle="dropdown"
+                                                       aria-expanded="false"> <span class="adult"
+                                                                                    data-text="Adult"
+                                                                                    data-text-multi="Adults">0 Adult</span>
+                                                        - <span class="children" data-text="Child"
+                                                                data-text-multi="Children">0 Child</span>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-wrap">
+                                                        <div class="dropdown-item">
+                                                            <div
+                                                                class="qty-box d-flex align-items-center justify-content-between">
+                                                                <label>Adults</label>
+                                                                <div class="qtyBtn d-flex align-items-center">
+                                                                    <div class="qtyDec">
+                                                                        <i class="la la-minus"></i>
+                                                                    </div>
+                                                                    <input type="text" name="adult_number" value="0"/>
+                                                                    <div class="qtyInc">
+                                                                        <i class="la la-plus"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dropdown-item">
+                                                            <div
+                                                                class="qty-box d-flex align-items-center justify-content-between">
+                                                                <label>Children</label>
+                                                                <div class="qtyBtn d-flex align-items-center">
+                                                                    <div class="qtyDec">
+                                                                        <i class="la la-minus"></i>
+                                                                    </div>
+                                                                    <input type="text" name="child_number" value="0"/>
+                                                                    <div class="qtyInc">
+                                                                        <i class="la la-plus"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dropdown-item">
+                                                            <div
+                                                                class="qty-box d-flex align-items-center justify-content-between">
+                                                                <label>Infants</label>
+                                                                <div class="qtyBtn d-flex align-items-center">
+                                                                    <div class="qtyDec">
+                                                                        <i class="la la-minus"></i>
+                                                                    </div>
+                                                                    <input type="text" name="infants_number" value="0"
+                                                                           class="qty-input"/>
+                                                                    <div class="qtyInc">
+                                                                        <i class="la la-plus"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="btn-box">
+                                <a href="#" class="theme-btn">Tìm kiếm ngay</a>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tour" role="tabpanel"
+                             aria-labelledby="tour-tab">
+                            <div class="contact-form-action">
+                                <form action="#" class="row align-items-center">
+                                    <div class="col-lg-4 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">Where would like to go?</label>
+                                            <div class="form-group">
+                                                <span class="la la-map-marker form-icon"></span> <input
+                                                class="form-control" type="text"
+                                                placeholder="Destination, city, or region"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 pe-0">
+                                        <div class="input-box">
+                                            <label class="label-text">From</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span> <input
+                                                class="date-range form-control" type="datetime-local" "/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="input-box">
+                                            <label class="label-text">To</label>
+                                            <div class="form-group">
+                                                <span class="la la-calendar form-icon"></span> <input
+                                                class="date-range form-control" type="datetime-local" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="btn-box pt-3">
+                                <a href="#" class="theme-btn">Tìm kiếm ngay</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 100 10" preserveAspectRatio="none">
+            <path d="M0 10 0 0 A 90 59, 0, 0, 0, 100 0 L 100 10 Z"></path>
+        </svg>
+    </div>
+</section>
+<section
+    class="hotel-area section-bg section-padding overflow-hidden padding-right-100px padding-left-100px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading text-center">
+                    <h2 class="sec__title line-height-55">10 khách sạn tốt nhất ở
+                        Vũng Tàu</h2>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------------------------------->
+        <div class="owl-carousel owl-theme">
+            <div class="card-item mb-0" style="height: 471px;">
+                <div class="card-img">
+                    <a href="#" class="d-block"> <img src="../static/img/img1.jpg"
+                                                      alt="hotel-img"/>
+                    </a> <span class="badge">Bestseller</span>
+                    <div class="add-to-wishlist icon-element" data-bs-toggle="tooltip"
+                         data-placement="top" title="Bookmark">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a class="text-decoration-none" href="#">The Millennium
+                            Hilton New York</a>
+                    </h3>
+                    <p class="card-meta">124 E Huron St, New york</p>
+                    <div class="card-rating">
+                        <span class="badge text-white">4.4/5</span> <span
+                        class="review__text">Average</span> <span class="rating__text">(30
+								Reviews)</span>
+                    </div>
+                    <div
+                        class="card-price d-flex align-items-center justify-content-between">
+                        <p>
+                            <span class="price__from">From</span> <span class="price__num">$88.00</span>
+                            <span class="price__text">Per night</span>
+                        </p>
+                        <a href="#" class="btn-text">See details<i
+                            class="la la-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-item mb-0" style="height: 471px;">
+                <div class="card-img">
+                    <a href="#" class="d-block"> <img src="../static/img/img2.jpg"
+                                                      alt="hotel-img"/>
+                    </a>
+                    <div class="add-to-wishlist icon-element" data-bs-toggle="tooltip"
+                         data-placement="top" title="Bookmark">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a class="text-decoration-none" href="#">Best Western Grant
+                            Park Hotel</a>
+                    </h3>
+                    <p class="card-meta">124 E Huron St, Chicago</p>
+                    <div class="card-rating">
+                        <span class="badge text-white">4.4/5</span> <span
+                        class="review__text">Average</span> <span class="rating__text">(30
+								Reviews)</span>
+                    </div>
+                    <div
+                        class="card-price d-flex align-items-center justify-content-between">
+                        <p>
+                            <span class="price__from">From</span> <span class="price__num">$58.00</span>
+                            <span class="price__text">Per night</span>
+                        </p>
+                        <a href="#" class="btn-text">See details<i
+                            class="la la-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-item mb-0">
+                <div class="card-img">
+                    <a href="#" class="d-block"> <img src="../static/img/img3.jpg"
+                                                      alt="hotel-img"/>
+                    </a> <span class="badge">Featured</span>
+                    <div class="add-to-wishlist icon-element" data-bs-toggle="tooltip"
+                         data-placement="top" title="Bookmark">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a class="text-decoration-none" href="#">Hyatt Regency Maui
+                            Resort & Spa</a>
+                    </h3>
+                    <p class="card-meta">200 Nohea Kai Dr, Lahaina, HI</p>
+                    <div class="card-rating">
+                        <span class="badge text-white">4.4/5</span> <span
+                        class="review__text">Average</span> <span class="rating__text">(30
+								Reviews)</span>
+                    </div>
+                    <div
+                        class="card-price d-flex align-items-center justify-content-between">
+                        <p>
+                            <span class="price__from">From</span> <span class="price__num">$88.00</span>
+                            <span class="price__text">Per night</span>
+                        </p>
+                        <a href="#" class="btn-text">See details<i
+                            class="la la-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-item mb-0">
+                <div class="card-img">
+                    <a href="#" class="d-block"> <img src="../static/img/img4.jpg"
+                                                      alt="hotel-img"/>
+                    </a> <span class="badge">Popular</span>
+                    <div class="add-to-wishlist icon-element" data-bs-toggle="tooltip"
+                         data-placement="top" title="Bookmark">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a class="text-decoration-none" href="#">Four Seasons Resort
+                            Maui at Wailea</a>
+                    </h3>
+                    <p class="card-meta">3900 Wailea Alanui Drive, Kihei, HI</p>
+                    <div class="card-rating">
+                        <span class="badge text-white">4.4/5</span> <span
+                        class="review__text">Average</span> <span class="rating__text">(30
+								Reviews)</span>
+                    </div>
+                    <div
+                        class="card-price d-flex align-items-center justify-content-between">
+                        <p>
+                            <span class="price__from">From</span> <span class="price__num">$88.00</span>
+                            <span class="price__text">Per night</span>
+                        </p>
+                        <a href="#" class="btn-text">See details<i
+                            class="la la-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card-item mb-0">
+                    <div class="card-img">
+                        <a href="#" class="d-block"> <img
+                            src="../static/img/img5.jpg" alt="hotel-img"/>
+                        </a>
+                        <div class="add-to-wishlist icon-element"
+                             data-bs-toggle="tooltip" data-placement="top" title="Bookmark">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a class="text-decoration-none" href="#">Ibis Styles London
+                                Heathrow</a>
+                        </h3>
+                        <p class="card-meta">272 Bath Road, Harlington, England</p>
+                        <div class="card-rating">
+                            <span class="badge text-white">4.4/5</span> <span
+                            class="review__text">Average</span> <span class="rating__text">(30
+									Reviews)</span>
+                        </div>
+                        <div
+                            class="card-price d-flex align-items-center justify-content-between">
+                            <p>
+                                <span class="price__from">From</span> <span class="price__num">$88.00</span>
+                                <span class="price__text">Per night</span>
+                            </p>
+                            <a href="#" class="btn-text">See details<i
+                                class="la la-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-item mb-0">
+                <div class="card-img">
+                    <a href="#" class="d-block"> <img src="../static/img/img6.jpg"
+                                                      alt="hotel-img"/>
+                    </a>
+                    <div class="add-to-wishlist icon-element" data-bs-toggle="tooltip"
+                         data-placement="top" title="Bookmark">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a class="text-decoration-none" href="#">Hotel Europe Saint
+                            Severin Paris</a>
+                    </h3>
+                    <p class="card-meta">38-40 Rue Saint Séverin, Paris, Paris</p>
+                    <div class="card-rating">
+                        <span class="badge text-white">4.4/5</span> <span
+                        class="review__text">Average</span> <span class="rating__text">(30
+								Reviews)</span>
+                    </div>
+                    <div
+                        class="card-price d-flex align-items-center justify-content-between">
+                        <p>
+                            <span class="price__from">From</span> <span class="price__num">$88.00</span>
+                            <span class="price__text">Per night</span>
+                        </p>
+                        <a href="#" class="btn-text">See details<i
+                            class="la la-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-item mb-0" style="height: 471px;">
+                <div class="card-img">
+                    <a href="#" class="d-block"> <img src="../static/img/img1.jpg"
+                                                      alt="hotel-img"/>
+                    </a> <span class="badge">Bestseller</span>
+                    <div class="add-to-wishlist icon-element" data-bs-toggle="tooltip"
+                         data-placement="top" title="Bookmark">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a class="text-decoration-none" href="#">The Millennium
+                            Hilton New York</a>
+                    </h3>
+                    <p class="card-meta">124 E Huron St, New york</p>
+                    <div class="card-rating">
+                        <span class="badge text-white">4.4/5</span> <span
+                        class="review__text">Average</span> <span class="rating__text">(30
+								Reviews)</span>
+                    </div>
+                    <div
+                        class="card-price d-flex align-items-center justify-content-between">
+                        <p>
+                            <span class="price__from">From</span> <span class="price__num">$88.00</span>
+                            <span class="price__text">Per night</span>
+                        </p>
+                        <a href="#" class="btn-text">See details<i
+                            class="la la-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-item mb-0" style="height: 471px;">
+                <div class="card-img">
+                    <a href="#" class="d-block"> <img src="../static/img/img2.jpg"
+                                                      alt="hotel-img"/>
+                    </a>
+                    <div class="add-to-wishlist icon-element" data-bs-toggle="tooltip"
+                         data-placement="top" title="Bookmark">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a class="text-decoration-none" href="#">Best Western Grant
+                            Park Hotel</a>
+                    </h3>
+                    <p class="card-meta">124 E Huron St, Chicago</p>
+                    <div class="card-rating">
+                        <span class="badge text-white">4.4/5</span> <span
+                        class="review__text">Average</span> <span class="rating__text">(30
+								Reviews)</span>
+                    </div>
+                    <div
+                        class="card-price d-flex align-items-center justify-content-between">
+                        <p>
+                            <span class="price__from">From</span> <span class="price__num">$58.00</span>
+                            <span class="price__text">Per night</span>
+                        </p>
+                        <a href="#" class="btn-text">See details<i
+                            class="la la-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="destination-area section--padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="section-heading">
+                    <h2 class="sec__title">Khách sạn & chỗ ở tốt nhất tại Vũng
+                        Tàu</h2>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="btn-box btn--box text-end">
+                    <a href="#" class="theme-btn">Discover More</a>
+                </div>
+            </div>
+        </div>
+        <div class="row padding-top-50px">
+            <div class="col-lg-4">
+                <div class="card-item destination-card">
+                    <div class="card-img">
+                        <img src="../static/img/destination-img2.jpg"
+                             alt="destination-img"/> <span class="badge">new york</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="#">Main Street Park</a>
+                        </h3>
+                        <div class="card-rating d-flex align-items-center">
+								<span class="ratings d-flex align-items-center me-1"> <i
+                    class="la la-star"></i> <i class="la la-star"></i> <i
+                    class="la la-star"></i> <i class="la la-star-o"></i> <i
+                    class="la la-star-o"></i>
+								</span> <span class="rating__text">(70694 Reviews)</span>
+                        </div>
+                        <div
+                            class="card-price d-flex align-items-center justify-content-between">
+                            <p class="tour__text">50 Tours</p>
+                            <p>
+                                <span class="price__from">Price</span> <span class="price__num">$58.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item destination-card">
+                    <div class="card-img">
+                        <img src="../static/img/destination-img3.jpg"
+                             alt="destination-img"/> <span class="badge">chicago</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="#">Chicago Cultural Center</a>
+                        </h3>
+                        <div class="card-rating d-flex align-items-center">
+								<span class="ratings d-flex align-items-center me-1"> <i
+                    class="la la-star"></i> <i class="la la-star"></i> <i
+                    class="la la-star"></i> <i class="la la-star"></i> <i
+                    class="la la-star-o"></i>
+								</span> <span class="rating__text">(70694 Reviews)</span>
+                        </div>
+                        <div
+                            class="card-price d-flex align-items-center justify-content-between">
+                            <p class="tour__text">50 Tours</p>
+                            <p>
+                                <span class="price__from">Price</span> <span class="price__num">$68.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card-item destination-card">
+                    <div class="card-img">
+                        <img src="../static/img/destination-img4.jpg"
+                             alt="destination-img"/> <span class="badge">Hong Kong</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="#">Lugard Road Lookout</a>
+                        </h3>
+                        <div class="card-rating d-flex align-items-center">
+								<span class="ratings d-flex align-items-center me-1"> <i
+                    class="la la-star"></i> <i class="la la-star"></i> <i
+                    class="la la-star"></i> <i class="la la-star-o"></i> <i
+                    class="la la-star-o"></i>
+								</span> <span class="rating__text">(70694 Reviews)</span>
+                        </div>
+                        <div
+                            class="card-price d-flex align-items-center justify-content-between">
+                            <p class="tour__text">150 Tours</p>
+                            <p>
+                                <span class="price__from">Price</span> <span class="price__num">$79.00</span>
+                                <span class="price__num before-price">$89.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-item destination-card">
+                    <div class="card-img">
+                        <img src="../static/img/destination-img5.jpg"
+                             alt="destination-img"/> <span class="badge">Las Vegas</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="tour-details.html">Planet Hollywood Resort</a>
+                        </h3>
+                        <div class="card-rating d-flex align-items-center">
+								<span class="ratings d-flex align-items-center me-1"> <i
+                    class="la la-star"></i> <i class="la la-star"></i> <i
+                    class="la la-star"></i> <i class="la la-star"></i> <i
+                    class="la la-star-o"></i>
+								</span> <span class="rating__text">(70694 Reviews)</span>
+                        </div>
+                        <div
+                            class="card-price d-flex align-items-center justify-content-between">
+                            <p class="tour__text">50 Tours</p>
+                            <p>
+                                <span class="price__from">Price</span> <span class="price__num">$88.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card-item destination-card">
+                    <div class="card-img">
+                        <img src="../static/img/destination-img.jpg"
+                             alt="destination-img"/> <span class="badge">Shanghai</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="tour-details.html">Oriental Pearl TV Tower</a>
+                        </h3>
+                        <div class="card-rating d-flex align-items-center">
+								<span class="ratings d-flex align-items-center me-1"> <i
+                    class="la la-star"></i> <i class="la la-star"></i> <i
+                    class="la la-star"></i> <i class="la la-star"></i> <i
+                    class="la la-star"></i>
+								</span> <span class="rating__text">(70694 Reviews)</span>
+                        </div>
+                        <div
+                            class="card-price d-flex align-items-center justify-content-between">
+                            <p class="tour__text">50 Tours</p>
+                            <p>
+                                <span class="price__from">Price</span> <span class="price__num">$58.00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="blog-area padding-top-30px padding-bottom-90px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading text-center">
+                    <h2 class="sec__title line-height-55">
+                        Latest News & Articles <br/> You Might Like
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row padding-top-50px">
+            <div class="col-lg-4 responsive-column">
+                <div class="card-item blog-card">
+                    <div class="card-img">
+                        <img src="../static/img/blog-img.jpg" alt="blog-img"/>
+                        <div class="post-format icon-element">
+                            <i class="bi bi-card-image"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="post-categories">
+                                <a href="#" class="badge ">Travel</a> <a href="#" class="badge text-decoration-none">lifestyle</a>
+                            </div>
+                            <h3 class="card-title line-height-26">
+                                <a class="text-decoration-none" href="#">When Traveling Avoid Expensive Hotels & Resorts</a>
+                            </h3>
+                            <p class="card-meta">
+                                <span class="post__date"> 1 January, 2020</span> <span
+                                class="post-dot"></span> <span class="post__time">5
+										Mins read</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="card-footer d-flex align-items-center justify-content-between">
+                        <div class="author-content d-flex align-items-center">
+                            <div class="author-img">
+                                <img src="../static/img/small-team1.jpg"
+                                     alt="testimonial image"/>
+                            </div>
+                            <div class="author-bio">
+                                <a href="#" class="text-decoration-none text-dark">Leroy Bell</a>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a href="#" class="text-decoration-none text-dark">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 responsive-column">
+                <div class="card-item blog-card">
+                    <div class="card-img">
+                        <img src="../static/img/blog-img2.jpg" alt="blog-img"/>
+                        <div class="post-format icon-element">
+                            <i class="bi bi-play"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="post-categories">
+                                <a href="#" class="badge text-decoration-none">Video</a>
+                            </div>
+                            <h3 class="card-title line-height-26">
+                                <a class="text-decoration-none" href="#">My Best Travel Tips: The Ultimate Travel Guide</a>
+                            </h3>
+                            <p class="card-meta">
+                                <span class="post__date"> 1 February, 2020</span> <span
+                                class="post-dot"></span> <span class="post__time">4
+										Mins read</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="card-footer d-flex align-items-center justify-content-between">
+                        <div class="author-content d-flex align-items-center">
+                            <div class="author-img">
+                                <img src="../static/img/small-team2.jpg"
+                                     alt="testimonial image"/>
+                            </div>
+                            <div class="author-bio">
+                                <a href="#" class="text-decoration-none text-dark">Leroy Bell</a>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a href="#" class="text-decoration-none text-dark">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 responsive-column">
+                <div class="card-item blog-card">
+                    <div class="card-img">
+                        <img src="../static/img/blog-img3.jpg" alt="blog-img"/>
+                        <div class="post-format icon-element">
+                            <i class="bi bi-music-note-beamed"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="post-categories">
+                                <a href="#" class="badge text-decoration-none">audio</a>
+                            </div>
+                            <h3 class="card-title line-height-26">
+                                <a class="text-decoration-none" href="#">By all Means,
+                                    Travel to Popular Sites & Don’t Rule Out Other Locations</a>
+                            </h3>
+                            <p class="card-meta">
+                                <span class="post__date"> 1 March, 2020</span> <span
+                                class="post-dot"></span> <span class="post__time">3
+										Mins read</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="card-footer d-flex align-items-center justify-content-between">
+                        <div class="author-content d-flex align-items-center">
+                            <div class="author-img">
+                                <img src="../static/img/small-team3.jpg"
+                                     alt="testimonial image"/>
+                            </div>
+                            <div class="author-bio">
+                                <a href="#" class="text-decoration-none text-dark">Leroy Bell</a>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a href="#" class="text-decoration-none text-dark">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section
+    class="footer-area section-bg padding-top-100px padding-bottom-30px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 responsive-column">
+                <div class="footer-item">
+                    <div class="footer-logo padding-bottom-30px">
+                        <a href="index.html" class="foot__logo"><img
+                            src="../static/img/logo.png" alt="logo"/></a>
+                    </div>
+                    <p class="footer__desc">Agoda.com nhà cung cấp dịch vụ du lịch
+                        trực tuyến & các dịch vụ có liên quan hàng đầu thế giới.</p>
+                    <ul class="list-items pt-3 list-unstyled">
+                        <li>Đường D1, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh
+                        </li>
+                        <li>0919-925-302</li>
+                        <li><a class="text-decoration-none" href="#">kieukienquocvn@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 responsive-column">
+                <div class="footer-item">
+                    <h4 class="title curve-shape pb-3 margin-bottom-20px">Company</h4>
+                    <ul class="list-items list--items list-unstyled ">
+                        <li><a class="text-decoration-none" href="#">About us</a></li>
+                        <li><a class="text-decoration-none" href="#">Services</a></li>
+                        <li><a class="text-decoration-none" href="#">Jobs</a></li>
+                        <li><a class="text-decoration-none" href="#">News</a></li>
+                        <li><a class="text-decoration-none" href="#">Support</a></li>
+                        <li><a class="text-decoration-none" href="#">Advertising</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 responsive-column">
+                <div class="footer-item">
+                    <h4 class="title curve-shape pb-3 margin-bottom-20px">Other
+                        Links</h4>
+                    <ul class="list-items list--items list-unstyled">
+                        <li><a class="text-decoration-none" href="#">USA Vacation Packages</a></li>
+                        <li><a class="text-decoration-none" href="#">USA Flights</a></li>
+                        <li><a class="text-decoration-none" href="#">USA Hotels</a></li>
+                        <li><a class="text-decoration-none" href="#">USA Car Hire</a></li>
+                        <li><a class="text-decoration-none" href="#">Create an Account</a></li>
+                        <li><a class="text-decoration-none" href="#">Trizen Reviews</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 responsive-column">
+                <div class="footer-item">
+                    <h4 class="title curve-shape pb-3 margin-bottom-20px">Subscribe
+                        now</h4>
+                    <p class="footer__desc pb-3">Subscribe for latest updates &
+                        promotions</p>
+                    <div class="contact-form-action">
+                        <form action="#">
+                            <div class="input-box">
+                                <label class="label-text">Enter email address</label>
+                                <div class="form-group mb-0">
+                                    <input class="form-control" type="email" name="email"
+                                           placeholder="Email address"/>
+                                    <button class="theme-btn theme-btn-small submit-btn"
+                                            style="border: none; margin-top: -6px;"
+                                            type="submit">Go
+                                    </button>
+                                    <span class="font-size-14 pt-1"><i
+                                        class="la la-lock me-1"></i>Your information is safe with us.</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="copy-right-content d-flex">
+                    <h3 class="title font-size-15 pe-2">We Accept</h3>
+                    <img src="../static/img/payment-img.png" alt=""/>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="footer-social-box text-end">
+                    <ul class="social-profile py-3">
+                        <li><a href="#" class="bg-5 text-white"><i
+                            class="bi bi-facebook"></i></a></li>
+                        <li><a href="#" class="bg-6 text-white"><i
+                            class="bi bi-twitter"></i></a></li>
+                        <li><a href="#" class="bg-7 text-white"><i
+                            class="bi bi-instagram"></i></a></li>
+                        <li><a href="#" class="bg-5 text-white"><i
+                            class="bi bi-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal-popup">
+    <div class="modal fade" id="signupPopupForm" tabindex="-1"
+         role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title title" id="exampleModalLongTitle">
+                            Sign Up</h5>
+                        <p class="font-size-14">Hello! Welcome Create a New Account</p>
+                    </div>
+                    <button type="button" class="btn-close close"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-form-action">
+                        <form method="post">
+                            <div class="input-box">
+                                <label class="label-text">Username</label>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="text"
+                                           placeholder="Type your username"/>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Email Address</label>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="text"
+                                           placeholder="Type your email"/>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Password</label>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="text"
+                                           placeholder="Type password"/>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Repeat Password</label>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="text"
+                                           placeholder="Type again password"/>
+                                </div>
+                            </div>
+                            <div class="btn-box pt-3 pb-4">
+                                <button type="button" class="theme-btn w-100">
+                                    Register Account
+                                </button>
+                            </div>
+                            <div class="action-box text-center">
+                                <p class="font-size-14">Or Sign up Using</p>
+                                <ul class="social-profile py-3">
+                                    <li><a href="#" class="bg-5 text-white"><i
+                                        class="bi bi-facebook"></i></a></li>
+                                    <li><a href="#" class="bg-6 text-white"><i
+                                        class="bi bi-twitter"></i></a></li>
+                                    <li><a href="#" class="bg-7 text-white"><i
+                                        class="bi bi-instagram"></i></a></li>
+                                    <li><a href="#" class="bg-5 text-white"><i
+                                        class="bi bi-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<footer>
-    <div class="main__footer">
-        <div class="footer__content">
-            <div class="footer__about">
-                <img class="image" src="img/footer-1.png" alt="">
-                <p class="titlee">E-COP CÔNG TY TNHH NỘI THẤT</p>
-                <ul class="list-unstyled ">
-                    <li><strong>Tổng đài : </strong>1900 0208</li>
-                    <li><strong>Hotline : </strong>0919 925 302 / 0901 948 853</li>
-                    <li><strong>Hồ Chí Minh: </strong>01, Trần Hưng Đạo, Quận 1,
-                        Hồ Chí Minh</li>
-                    <li><strong>Email: </strong>kieukienquocvn@gmail.com</li>
-                </ul>
-            </div>
-            <div class="footer__link ">
-                <h3 class="">E-COP</h3>
-                <ul class="list-unstyled text-light">
-                    <li>Trang chủ</li>
-                    <li>Giới thiệu</li>
-                    <li>Tin tức</li>
-                    <li>Liên hệ</li>
-                    <li>Quà tặng</li>
-                    <li>E-COP blog</li>
-                </ul>
-            </div>
-            <div class="footer__link">
-                <h3>Điều khoản</h3>
-                <ul class="list-unstyled text-light">
-                    <li>Chính sách đặt tour</li>
-                    <li>Chính sách bảo mật</li>
-                    <li>Ý kiến khách hàng</li>
-                    <li>Dịch vụ</li>
-                    <li>Phiếu góp ý</li>
-                    <li>Đối tác</li>
-                </ul>
-            </div>
-            <div class="newsletter">
-                <h3>Đăng ký nhận thông tin khuyến mãi</h3>
-                <p>Nhập email để có cơ hội giảm 50% cho chuyến đi tiếp theo của
-                    Quý khách.</p>
 
-                <form action="" class="form-sub">
-                    <input type="text" placeholder="Email Address">
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer__payment">
-            <div class="payment__support">
-                <ul class="list-unstyled ">
-                    <li>E-COP hỗ trợ:</li>
-                    <li><i class='bx bxl-mastercard'></i></li>
-                    <li><i class='bx bxl-paypal'></i></li>
-                    <li><i class='bx bxl-stripe'></i></li>
-                    <li><i class='bx bxl-visa'></i></li>
-                    <li><i class='bx bxs-bank'></i></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright row">
-            <div class="copyright__text col-5">
-                <p style="font-size: 10px;">© 2021 - Bản quyền của E-COP thương
-                    hiệu thuộc AKA Furniture Từ năm 1999 - thương hiệu đăng ký số
-                    284074 Cục sở hữu trí tuệ</p>
-            </div>
-            <div class="social__link col-5 ">
-                <ul class="list-unstyled ">
-                    <li><a href=""><i class="bi bi-facebook"></i></a></li>
-                    <li><a href=""><i class="bi bi-twitter"></i></a></li>
-                    <li><a href=""><i class="bi bi-instagram"></i></a></li>
-                    <li><a href=""><i class="bi bi-linkedin"></i></a></li>
-                </ul>
+<div class="modal-popup">
+    <div class="modal fade" id="loginPopupForm" tabindex="-1"
+         role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title title" id="exampleModalLongTitle2">
+                            Login</h5>
+                        <p class="font-size-14">Hello! Welcome to your account</p>
+                    </div>
+                    <button type="button" class="btn-close close"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-form-action">
+                        <form method="post">
+                            <div class="input-box">
+                                <label class="label-text">Username</label>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="text"
+                                           placeholder="Type your username"/>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label class="label-text">Password</label>
+                                <div class="form-group mb-2">
+                                    <input class="form-control" type="text" name="text"
+                                           placeholder="Type your password"/>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="custom-checkbox mb-0">
+                                        <input type="checkbox" class="form-check-input"
+                                               id="rememberchb"/> <label for="rememberchb">Remember
+                                        me</label>
+                                    </div>
+                                    <p class="forgot-password">
+                                        <a href="#">Forgot Password?</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="btn-box pt-3 pb-4">
+                                <button type="button" class="theme-btn w-100">Login
+                                    Account
+                                </button>
+                            </div>
+                            <div class="action-box text-center">
+                                <p class="font-size-14">Or Login Using</p>
+                                <ul class="social-profile py-3">
+                                    <li><a href="#" class="bg-5 text-white"><i
+                                        class="bi bi-facebook"></i></a></li>
+                                    <li><a href="#" class="bg-6 text-white"><i
+                                        class="bi bi-twitter"></i></a></li>
+                                    <li><a href="#" class="bg-7 text-white"><i
+                                        class="bi bi-instagram"></i></a></li>
+                                    <li><a href="#" class="bg-5 text-white"><i
+                                        class="bi bi-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</footer>
+</div>
 <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script>
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true
+    });
+</script>
 </body>
 </html>
