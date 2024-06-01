@@ -13,7 +13,7 @@ CREATE TABLE Khach_Hang(
 	SDT Varchar (10) ,
 	PRIMARY KEY (Ma_khach_hang)
 )
-drop table KhachHang
+
 GO
 CREATE TABLE Khach_san(
 	Ma_khach_san int Identity(1,1),
@@ -25,7 +25,6 @@ CREATE TABLE Khach_san(
 	PRIMARY KEY (Ma_khach_san)
 
 )
-drop Table KhachSan
 GO
 CREATE TABLE Phong (
     Ma_phong int identity(1,1),
@@ -50,8 +49,7 @@ CREATE TABLE Dat_phong (
     Trang_thai bit not null,
     FOREIGN KEY (Ma_khach_hang) REFERENCES Khach_hang(Ma_khach_hang),
     FOREIGN KEY (Ma_phong) REFERENCES Phong(Ma_phong)
-);
-Drop Table DatPhong
+)
 GO
 CREATE TABLE Danh_Gia (
     Ma_danh_gia INT  Identity(1,1),
@@ -64,7 +62,6 @@ CREATE TABLE Danh_Gia (
     FOREIGN KEY (Ma_khach_hang) REFERENCES Khach_Hang(Ma_khach_hang),
     FOREIGN KEY (Ma_khach_san) REFERENCES Khach_san(Ma_khach_san)
 );
-drop table DanhGia
 GO
 
 CREATE TABLE Khuyen_mai (
@@ -76,7 +73,6 @@ CREATE TABLE Khuyen_mai (
     Muc_giam Decimal(5, 2) NOT NULL CHECK (Muc_giam >= 0 AND Muc_giam <= 100),
 	PRIMARY KEY (Ma_khuyen_mai)
 );
-drop table KhuyenMai
 GO
 
 CREATE TABLE Dich_vu (
@@ -89,7 +85,11 @@ CREATE TABLE Dich_vu (
     FOREIGN KEY (Ma_khach_san) REFERENCES Khach_san(Ma_khach_san)
 	
 );
-drop table Dichvu
 GO
 
+CREATE TABLE Hinh_anh(
+Ma_khach_san int ,
+hinh varchar(255),
+ FOREIGN KEY (Ma_khach_san) REFERENCES Khach_san(Ma_khach_san)
+)
 
