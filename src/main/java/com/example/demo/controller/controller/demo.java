@@ -1,15 +1,16 @@
-package com.example.demo;
+package com.example.demo.controller.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class demo {
-    @RequestMapping("/demo")
+    @GetMapping("/demo")
     public String demo1() {
         return "detail";
     }
-    @RequestMapping("/hoatdong")
+    @GetMapping("/hoatdong")
   	public String hoatdong()
   	{
   		return"hoatdong"; 
@@ -18,4 +19,6 @@ public class demo {
   	public String vungtau() {
   		return"vungtau"; 
   	}
+
+
 }
