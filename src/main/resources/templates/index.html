@@ -98,29 +98,31 @@
         <div class="tab-content">
             <div class="tab-pane active" id="tab1">
                 <div class="input-group flex-nowrap p-5" style="display: flex; flex-wrap: nowrap;">
-                    <span class="input-group-text" id="addon-wrapping"><i class="fa-brands fa-searchengin"></i></span>
+                    <span class="input-group-text" ><i class="fa-brands fa-searchengin"></i></span>
                     <input type="text" class="form-control" placeholder="Tìm kiếm" aria-describedby="addon-wrapping">
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <label for="startDate">Ngày đến</label>
-                        <input id="startDate" class="form-control" type="date" />
+                        <label for="startDateTab1">Ngày đi</label>
+                        <input id="startDateTab1" class="form-control" type="date" />
                     </div>
 
                     <div class="col-4">
-                        <label for="startDate">Ngày đi</label>
-                        <input id="startDate" class="form-control" type="date" />
+                        <label for="EndDate">Ngày về</label>
+                        <input id="EndDate" class="form-control" type="date" />
                     </div>
 
                     <div class="col-4">
                         <div class="dropdown mt-4">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            <button class="btn btn-secondary dropdown-toggle" type="button"
                                 data-toggle="dropdown">
                                 Chọn số người
                             </button>
 
                             <div class="dropdown-menu">
                                 <div class="dropdown-item">
+
+
                                     <label>Người lớn</label>
                                     <div class="row">
                                         <div class="input-group" id="nguoiLon">
@@ -148,7 +150,7 @@
                             </div>
                         </div>
                         <div class="dropdown mt-4">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            <button class="btn btn-secondary dropdown-toggle" type="button"
                                 data-toggle="dropdown">
                                 Chọn Loại phòng
                             </button>
@@ -195,18 +197,18 @@
                 </div>
                 <div class="row">
                     <div class="col-4">
-                        <label for="startDate">Ngày đến</label>
-                        <input id="startDate" class="form-control" type="date" />
+                        <label for="startDateTab2">Ngày đi</label>
+                        <input id="startDateTab2" class="form-control" type="date" />
                     </div>
 
                     <div class="col-4">
-                        <label for="startDate">Ngày đi</label>
-                        <input id="startDate" class="form-control" type="date" />
+                        <label for="EndDateTab2">Ngày về</label>
+                        <input id="EndDateTab2" class="form-control" type="date" />
                     </div>
 
                     <div class="col-4">
                         <div class="dropdown mt-4">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            <button class="btn btn-secondary dropdown-toggle" type="button"
                                 data-toggle="dropdown">
                                 Chọn số người
                             </button>
@@ -215,10 +217,10 @@
                                 <div class="dropdown-item">
                                     <label>Người lớn</label>
                                     <div class="row">
-                                        <div class="input-group" id="nguoiLon">
+                                        <div class="input-group" id="nguoiLonTab2">
                                             <button type="button" class="input-group-text"
                                                 data-toggle="dropdown1">-</button>
-                                            <input type="text" class="form-control" value1="0">
+                                            <input type="text" class="form-control" value1="0">s
                                             <button type="button" class="input-group-text"
                                                 data-toggle="dropdown1">+</button>
                                         </div>
@@ -228,7 +230,7 @@
                                 <div class="dropdown-item">
                                     <label>Trẻ em</label>
                                     <div class="row">
-                                        <div class="input-group" id="treEm">
+                                        <div class="input-group" id="treEmTab2">
                                             <button type="button" class="input-group-text"
                                                 data-toggle="dropdown">-</button>
                                             <input type="text" class="form-control" value2="0">
@@ -250,18 +252,18 @@
             <div class="tab-pane" id="tab3">
                 <div class="row">
                     <div class="col-4">
-                        <label for="startDate">Ngày đến</label>
-                        <input id="startDate" class="form-control" type="date" />
+                        <label for="startDateTab3">Ngày đi</label>
+                        <input id="startDateTab3" class="form-control" type="date" />
                     </div>
 
                     <div class="col-4">
-                        <label for="startDate">Ngày đi</label>
-                        <input id="startDate" class="form-control" type="date" />
+                        <label for="EndDateTab3">Ngày về</label>
+                        <input id="EndDateTab3" class="form-control" type="date" />
                     </div>
 
                     <div class="col-4">
                         <div class="dropdown mt-4">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            <button class="btn btn-secondary dropdown-toggle" type="button"
                                 data-toggle="dropdown">
                                 Chọn số người
                             </button>
@@ -270,7 +272,7 @@
                                 <div class="dropdown-item">
                                     <label>Người lớn</label>
                                     <div class="row">
-                                        <div class="input-group" id="nguoiLon">
+                                        <div class="input-group" id="nguoiLonTab3">
                                             <button type="button" class="input-group-text"
                                                 data-toggle="dropdown1">-</button>
                                             <input type="text" class="form-control" value1="0">
@@ -283,7 +285,7 @@
                                 <div class="dropdown-item">
                                     <label>Trẻ em</label>
                                     <div class="row">
-                                        <div class="input-group" id="treEm">
+                                        <div class="input-group" id="treEmTab3">
                                             <button type="button" class="input-group-text"
                                                 data-toggle="dropdown">-</button>
                                             <input type="text" class="form-control" value2="0">
@@ -343,12 +345,23 @@
                                 <div class="dropdown-item">
                                     <label>Người lớn</label>
                                     <div class="row">
-                                        <div class="input-group" id="nguoiLon">
-                                            <button type="button" class="input-group-text"
-                                                data-toggle="dropdown1">-</button>
-                                            <input type="text" class="form-control" value1="0">
-                                            <button type="button" class="input-group-text"
-                                                data-toggle="dropdown1">+</button>
+                                        <div class="input-group" id="nguoiLonTab1">
+                                            <div class="row">
+                                                <div class="col-2 ">
+                                                    <button type="button" class="input-group-text"
+                                                            style="  width: 100%;height: 100%;"
+                                                            data-toggle="dropdown1">-</button>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input type="text" class="form-control" value1="0" >
+                                                </div>
+                                                <div class="col-2">
+                                                    <button type="button" class="input-group-text"
+                                                            style="  width: 100%;height: 100%;"
+
+                                                            data-toggle="dropdown1">+</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -356,12 +369,20 @@
                                 <div class="dropdown-item">
                                     <label>Trẻ em</label>
                                     <div class="row">
-                                        <div class="input-group" id="treEm">
-                                            <button type="button" class="input-group-text"
-                                                data-toggle="dropdown">-</button>
-                                            <input type="text" class="form-control" value2="0">
-                                            <button type="button" class="input-group-text"
-                                                data-toggle="dropdown">+</button>
+                                        <div class="input-group" id="treEmTab1">
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <button type="button" class="input-group-text"
+                                                            data-toggle="dropdown">-</button>
+                                                </div>
+                                                <div class="col-4">
+                                                    <input type="text" class="form-control" value2="0">
+                                                </div>
+                                                <div class="col-4">
+                                                    <button type="button" class="input-group-text"
+                                                            data-toggle="dropdown">+</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -397,35 +418,38 @@
 
     </div>
     <h1 class="text-center">Các điểm đến thu hút nhất Việt Nam
-        <div class="row">
-            <div class="col-4">
-                <div class="card" style="width: 40rem;">
-                    <img src="img/images.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Đà nẵng</h5>
-                      <a href="#" class="btn btn-primary">Tìm hiểu</a>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card" style="width: 40rem;">
+                        <img src="img/images.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Đà nẵng</h5>
+                            <a href="#" class="btn btn-primary">Tìm hiểu</a>
+                        </div>
                     </div>
-                  </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 40rem;">
-                    <img src="img/HCM.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Tp.Hồ Chí Minh</h5>
-                      <a href="#" class="btn btn-primary">Tìm hiểu</a>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="width: 40rem;">
+                        <img src="img/HCM.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Tp.Hồ Chí Minh</h5>
+                            <a href="#" class="btn btn-primary">Tìm hiểu</a>
+                        </div>
                     </div>
-                  </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 40rem;">
-                    <img src="img/nhaTrang.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Nha trang</h5>
-                      <a href="#" class="btn btn-primary">Tìm hiểu</a>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="width: 40rem;">
+                        <img src="img/nhaTrang.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nha trang</h5>
+                            <a href="#" class="btn btn-primary">Tìm hiểu</a>
+                        </div>
                     </div>
-                  </div>
+                </div>
             </div>
-        </div>
+
+
 
 
 

@@ -21,7 +21,9 @@ $('#nguoiLon .input-group-text').click(function(e) {
 
   if(this.innerHTML == "+") {
     adultValue++;  
-  } else {
+  } else if(adultValue<2){
+    alert("khach hang ko dc <1");
+  }else{
     adultValue--;
   }
 
@@ -32,9 +34,11 @@ $('#nguoiLon .input-group-text').click(function(e) {
 
 $('#treEm .input-group-text').click(function(e) {
 
-  if(this.innerHTML == "+") {  
+  if(this.innerHTML == "+") {
     childValue++;
-  } else {
+  } else if(childValue<1){
+    alert("toi thieu la 0");
+  }else{
     childValue--;
   }
 
