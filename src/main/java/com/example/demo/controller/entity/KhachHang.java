@@ -21,10 +21,10 @@ public class KhachHang {
     @Column(name = "Mat_khau")
     private String password;
 
-    @Column("ho_ten")
+    @Column(name="ho_ten")
     private String fullname;
 
-    @Column(name = "Gioi_tinh")
+
 
 
 }
