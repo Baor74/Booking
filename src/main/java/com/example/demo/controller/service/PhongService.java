@@ -8,4 +8,5 @@ import java.util.List;
 @Service
 public interface PhongService {
     List<Phong> findPhongByKhachsan(String KhachSan);
+    List<Phong> sortPrice(Float PriceLess);
 }

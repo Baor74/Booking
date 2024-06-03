@@ -13,5 +13,6 @@ public interface PhongRepo extends JpaRepository<Phong, Integer> {
     @Query(value = "SELECT p.* FROM Phong p INNER JOIN Khach_san k ON p.Ma_khach_san = k.Ma_khach_san WHERE k.Ten_khach_san = ?1", nativeQuery = true)
     List<Phong> findPhongByKhachsan(String khachSan);
 
-
+    @Query(value = "SELECT * FROM Phong p WHERE p.gia <?1", nativeQuery = true)
+    List<Phong> sortPrice(Float PriceLess);
 }

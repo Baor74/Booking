@@ -18,4 +18,7 @@ public class PhongImp implements PhongService {
         return repo.findPhongByKhachsan(KhachSan);
     }
 
-}
+    public List<Phong> sortPrice(Float PriceLess)  { return repo.sortPrice(PriceLess);}
+    }
+
+

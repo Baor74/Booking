@@ -47,4 +47,18 @@ public class PhongAPI {
         }
         return ResponseEntity.ok(rs);
     }
+    @GetMapping("/sortPrice")
+    public ResponseEntity<?> doGetPriceLess(@RequestParam("Price") Float Price) {
+        Map<String, Object> rs = new HashMap();
+        try {
+            rs.put("Status", true);
+            rs.put("Message", "AllPhong");
+            rs.put("data", repo.sortPrice(Price));
+        } catch (Exception ex) {
+            rs.put("Status", false);
+            rs.put("Message", "fail");
+            rs.put("data", null);
+        }
+        return ResponseEntity.ok(rs);
+    }
 }
