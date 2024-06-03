@@ -2,7 +2,7 @@ package com.example.demo.controller.entity;
 
 import jakarta.persistence.AttributeConverter;
 
-public class BooleanConverter implements AttributeConverter<Boolean, Byte>{
+public class BooleanConverter implements AttributeConverter<Boolean, Byte> {
 
     @Override
     public Byte convertToDatabaseColumn(Boolean attribute) {

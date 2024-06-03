@@ -18,22 +18,23 @@ public class Phong {
     @Column(name = "Ma_phong")
     private Integer id;
 
+
     @Column(name = "Ma_khach_san", unique = true)
     private Integer MaKhachSan;
 
     @Column(name = "So_phong")
     private String SoPhong;
 
-    @Column(name="Kieu")
+    @Column(name = "Kieu")
     private String KieuPhong;
 
     @Column(name = "Gia")
     private Float Gia;
 
-    @Column(name="Mo_ta")
+    @Column(name = "Mo_ta")
     private String Mo_ta;
 
-    @Column(name="Trang_thai")
+    @Column(name = "Trang_thai")
     @Convert(converter = BooleanConverter.class)
     private Boolean TrangThai;
 }
