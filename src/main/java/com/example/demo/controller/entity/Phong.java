@@ -32,7 +32,7 @@ public class Phong {
     private Float Gia;
 
     @Column(name = "Mo_ta")
-    private String Mo_ta;
+    private String MoTa;
 
     @Column(name = "Trang_thai")
     @Convert(converter = BooleanConverter.class)
