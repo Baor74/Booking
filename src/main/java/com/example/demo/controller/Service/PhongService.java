@@ -1,6 +1,6 @@
-package com.example.demo.controller.service;
+package com.example.demo.controller.Service;
 
-import com.example.demo.controller.entity.Phong;
+import com.example.demo.controller.Entity.Phong;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.demo.controller.entity;
+package com.example.demo.controller.Entity;
 
 import jakarta.persistence.AttributeConverter;
 

@@ -1,4 +1,4 @@
-package com.example.demo.controller.config;
+package com.example.demo.controller.Config;
 
 import com.example.demo.controller.Utils.AuthInterceptor;
 import com.example.demo.controller.Utils.GlobalInterceptor;
