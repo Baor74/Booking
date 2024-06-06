@@ -30,15 +30,14 @@ public class TrendController {
   SessionService sessionService;
 
   @GetMapping("/trend")
-  public String trend(Model model, @RequestParam("tenKhachSan") Optional<String> tenKhachSan) {
-    List<KhachSan> listKhachSan = khachSanDAO.findAllByTenKhachSanLike(tenKhachSan.orElse(""));
+  public String fill_trend(Model model) {
+    List<KhachSan> listKhachSan = khachSanDAO.findAll();
     Map<Integer, Object[]> map = new HashMap<>();
     for (KhachSan ks : listKhachSan) {
       map.put(ks.getMaKhachSan(),
           new Object[]{ks.getTenKhachSan(), ks.getDiaChi(), ks.getXepHang(), ks.getImage()});
     }
     model.addAttribute("listKhachSan", map);
-
     return "trend";
   }
 }

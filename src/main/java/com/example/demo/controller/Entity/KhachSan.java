@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "Khach_san")
-public class KhachSan implements Serializable {
+public class KhachSan {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Ma_khach_san")
@@ -41,7 +41,7 @@ public class KhachSan implements Serializable {
   private BigDecimal xepHang;
 
   @Column(name = "Image")
-  private BigDecimal image;
+  private String image;
 
   @OneToMany(mappedBy = "khachSan")
   private List<Phong> khachSan;
