@@ -1,4 +1,5 @@
 package com.example.demo.controller.Utils;
+
 import com.example.demo.controller.Entity.KhachHang;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
