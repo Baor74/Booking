@@ -1,4 +1,5 @@
 DROP DATABASE DB_Booking;
+
 CREATE DATABASE DB_Booking;
 USE DB_Booking;
 Go
