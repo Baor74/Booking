@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/hanoi")
 public class HomeController {
 
-    @GetMapping("/hanoi")
-    public String index(Model model)
-    {
-        return "haNoi";
-    }
+  @GetMapping("/hanoi")
+  public String index(Model model) {
+
+    return "haNoi";
+  }
 }

@@ -26,8 +26,10 @@ CREATE TABLE Khach_san
     Thanh_pho     NVarChar(50)  not null,
     Mo_ta         NVarchar(100),
     Xep_hang      Decimal(2, 1) not null,
+	Image		  Nvarchar(250),
     PRIMARY KEY (Ma_khach_san)
 )
+
 GO
 CREATE TABLE Phong
 (
@@ -106,13 +108,13 @@ CREATE TABLE Hinh_anh
 -- Insert nè
 INSERT INTO Khach_san
 (Ten_khach_san, Dia_chi, Thanh_pho, Mo_ta, Xep_hang)
-VALUES (N'Khách sạn Sài Gòn', N'123 Lê Lai, Q.1', N'TP. Hồ Chí Minh', N'Khách sạn 5 sao', 5.0),
-       (N'Khách sạn Da Lat', N'45 Nguyễn Thi Minh Khai, TP. Đà Lạt', N'Lâm Đồng', N'Khách sạn 4 sao', 4.5),
-       (N'Khách sạn Vinh', N'100 Quang Trung, TP. Vinh', N'Nghệ An', N'Khách sạn 3 sao', 3.0),
-       (N'Khách sạn Nha Trang', N'258 Trần Phú, TP. Nha Trang', N'Khánh Hòa', N'Khách sạn bể bơi', 4.0),
-       (N'Khách sạn Trà Vinh', N'12 Trần Hưng Đạo, TP. Trà Vinh', N'Trà Vinh', N'Khách sạn giá rẻ', 2.5)
+VALUES (N'Khách sạn Sài Gòn', N'123 Lê Lai, Q.1', N'TP. Hồ Chí Minh', N'Khách sạn 5 sao', 5.0,N'img1.jpg'),
+       (N'Khách sạn Da Lat', N'45 Nguyễn Thi Minh Khai, TP. Đà Lạt', N'Lâm Đồng', N'Khách sạn 4 sao', 4.5,N'img2.jpg'),
+       (N'Khách sạn Vinh', N'100 Quang Trung, TP. Vinh', N'Nghệ An', N'Khách sạn 3 sao', 3.0,N'img3.jpg'),
+       (N'Khách sạn Nha Trang', N'258 Trần Phú, TP. Nha Trang', N'Khánh Hòa', N'Khách sạn bể bơi', 4.0,N'img4.jpg'),
+       (N'Khách sạn Trà Vinh', N'12 Trần Hưng Đạo, TP. Trà Vinh', N'Trà Vinh', N'Khách sạn giá rẻ', 2.5,N'img5.jpg')
 
-
+	   select*from Khach_san
 INSERT INTO Phong
 (Ma_khach_san, So_phong, Kieu, Gia, Mo_ta, Trang_thai)
 VALUES (1, 'P101', N'Phòng VIP', 500, N'Có cửa sổ ra biển', 1),

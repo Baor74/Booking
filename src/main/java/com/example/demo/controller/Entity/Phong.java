@@ -18,9 +18,9 @@ public class Phong {
     @Column(name = "Ma_phong")
     private Integer id;
 
-
-    @Column(name = "Ma_khach_san", unique = true)
-    private Integer MaKhachSan;
+    @ManyToOne
+    @JoinColumn(name = "Ma_khach_san")
+    private KhachSan khachSan;
 
     @Column(name = "So_phong")
     private String SoPhong;

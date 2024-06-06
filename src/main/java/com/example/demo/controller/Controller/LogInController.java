@@ -9,10 +9,12 @@ public class LogInController {
 
     @GetMapping("/FormDangKi")
     public String index(Model model) {
+
         return "FormDangKi";
     }
     @GetMapping("/FormDangNhap")
     public String indexs(Model model) {
+
         return "FormDangNhap";
     }
     
