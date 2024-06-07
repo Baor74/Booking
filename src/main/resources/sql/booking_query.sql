@@ -26,7 +26,7 @@ CREATE TABLE Khach_san
     Thanh_pho     NVarChar(50)  not null,
     Mo_ta         NVarchar(100),
     Xep_hang      Decimal(2, 1) not null,
-	Image		  Nvarchar(250),
+	Hinh		  Nvarchar(250),
     PRIMARY KEY (Ma_khach_san)
 )
 
@@ -65,7 +65,7 @@ CREATE TABLE Danh_Gia
     Ma_khach_hang INT,
     Ma_khach_san  INT,
     Danh_gia      INT CHECK (Danh_gia >= 1 AND Danh_gia <= 5),
-    Binh_luan     TEXT,
+    Binh_luan     NVARCHAR(255),
     Ngay_danh_gia DateTime,
     PRIMARY KEY (Ma_danh_gia),
     FOREIGN KEY (Ma_khach_hang) REFERENCES Khach_Hang (Ma_khach_hang),
