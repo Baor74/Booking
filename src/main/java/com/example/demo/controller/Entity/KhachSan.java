@@ -40,9 +40,6 @@ public class KhachSan {
   @Column(name = "Xep_hang")
   private BigDecimal xepHang;
 
-  @Column(name = "Image")
-  private String image;
-
   @OneToMany(mappedBy = "khachSan")
   private List<Phong> khachSan;
 }

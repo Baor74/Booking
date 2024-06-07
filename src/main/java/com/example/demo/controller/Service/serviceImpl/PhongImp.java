@@ -19,6 +19,11 @@ public class PhongImp implements PhongService {
     }
 
     public List<Phong> sortPrice(Float PriceLess)  { return repo.sortPrice(PriceLess);}
+
+    @Override
+    public List<Phong> findAll() {
+        return repo.findAll();
     }
+}
 
 

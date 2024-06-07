@@ -1,6 +1,8 @@
 package com.example.demo.controller.API;
 
+import com.example.demo.controller.Entity.Phong;
 import com.example.demo.controller.Responsitori.PhongRepo;
+import com.example.demo.controller.Service.PhongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,40 +11,43 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RequestMapping("/api-phong")
 @RestController
 public class PhongAPI {
     @Autowired
-    private PhongRepo repo;
+    private PhongService phongService;
 
-    @GetMapping("/Get-all")
+    @GetMapping("/get-all")
     public ResponseEntity<?> doGetAllPhong() {
         Map<String, Object> rs = new HashMap();
         try {
-            rs.put("Status", true);
-            rs.put("Message", "AllPhong");
-            rs.put("data", repo.findAll());
+            List<Phong> phongList = phongService.findAll();
+
+            rs.put("status", true);
+            rs.put("message", "Call api success");
+            rs.put("data",phongList);
         } catch (Exception ex) {
-            rs.put("Status", false);
-            rs.put("Message", "fail");
+            rs.put("status", false);
+            rs.put("message", "Call api failed");
             rs.put("data", null);
         }
         return ResponseEntity.ok(rs);
     }
 
-    @GetMapping("/Find-by-KhachSan")
+    @GetMapping("/find-by-KhachSan")
     public ResponseEntity<?> doFindByName(@RequestParam("khachSan") String KhachSan) {
         Map<String, Object> rs = new HashMap();
 
         try {
-            rs.put("Status", true);
-            rs.put("Message", "AllPhong");
-            rs.put("data", repo.findPhongByKhachsan(KhachSan));
+            rs.put("status", true);
+            rs.put("message", "Call api success");
+            rs.put("data", phongService.findPhongByKhachsan(KhachSan));
         } catch (Exception ex) {
-            rs.put("Status", false);
-            rs.put("Message", "fail");
+            rs.put("status", false);
+            rs.put("message", "Call api failed");
             rs.put("data", null);
         }
         return ResponseEntity.ok(rs);
@@ -51,12 +56,12 @@ public class PhongAPI {
     public ResponseEntity<?> doGetPriceLess(@RequestParam("Price") Float Price) {
         Map<String, Object> rs = new HashMap();
         try {
-            rs.put("Status", true);
-            rs.put("Message", "AllPhong");
-            rs.put("data", repo.sortPrice(Price));
+            rs.put("status", true);
+            rs.put("message", "Call api success");
+            rs.put("data", phongService.sortPrice(Price));
         } catch (Exception ex) {
-            rs.put("Status", false);
-            rs.put("Message", "fail");
+            rs.put("status", false);
+            rs.put("message", "Call api failed");
             rs.put("data", null);
         }
         return ResponseEntity.ok(rs);
