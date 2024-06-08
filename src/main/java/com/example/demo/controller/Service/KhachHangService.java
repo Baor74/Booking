@@ -9,5 +9,7 @@ import java.util.List;
 public interface KhachHangService {
     List<KhachHang>  findAllKhachHang();
     KhachHang findKhachHangByUsername(String username);
+    KhachHang addKhachHang(KhachHang khachHang);
+    void deleteKhachHangById(Integer id);
 
 }

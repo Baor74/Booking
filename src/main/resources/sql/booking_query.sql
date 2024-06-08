@@ -128,7 +128,19 @@ VALUES (1, 'P101', N'Phòng VIP', 500, N'Có cửa sổ ra biển', 1),
        (5, 'P501', N'Phòng gia đình', 1200, N'Có 3 giường đơn', 1),
        (5, 'P502', N'Phòng đôi', 700, N'Có 2 giường đôi', 0)
 
+INSERT INTO Dich_vu (Ma_khach_san, Ten_dich_vu, Mo_ta, Gia)
+VALUES
+            (1, 'Dịch vụ ăn uống', 'Nhà hàng, quầy bar', 150.00),
+           (1, 'Dịch vụ giặt ủi', 'Giặt là nhanh chóng và tiện lợi', 50.00),
+           (2, 'Dịch vụ spa', 'Trải nghiệm nghỉ dưỡng thư giãn', 300.00),
+           (2, 'Dịch vụ hồ bơi', 'Hồ bơi rộng rãi và sạch sẽ', 80.00),
+           (3, 'Dịch vụ phòng gym', 'Phòng tập đầy đủ trang thiết bị', 100.00),
+           (3, 'Dịch vụ golf', 'Sân golf 18 lỗ với cảnh quan đẹp', 500.00);
 
+INSERT INTO Khach_Hang (Ten_tai_khoan, Mat_khau, Ho_ten, Gioi_tinh, Ngay_sinh, Dia_chi, Email, SDT)
+VALUES
+('user1', '123', 'user1',1,'1-1-2004', 'Tp.Hồ Chí Minh', 'user1@gmail.com','0123456789'),
+('baor123','123','Nguyễn Văn Hoàng Bảo',1,'11-29-2004','Quảng Trị','baonvhps343@fpt.edu.vn','0123762465')
 --demo truy vấn
 
 SELECT p.* FROM Phong p INNER JOIN Khach_san k ON p.Ma_khach_san = k.Ma_khach_san WHERE k.Ten_khach_san = N'Khách sạn Sài Gòn'

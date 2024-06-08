@@ -22,4 +22,14 @@ public class KhachHangServiceImp implements KhachHangService {
     public KhachHang findKhachHangByUsername(String username) {
         return repo.findKhachHangByUsername(username);
     }
+
+    @Override
+    public KhachHang addKhachHang(KhachHang khachHang) {
+        return repo.save(khachHang);
+    }
+
+    @Override
+    public void deleteKhachHangById(Integer id) {
+        repo.deleteKhachHangByid(id);
+    }
 }

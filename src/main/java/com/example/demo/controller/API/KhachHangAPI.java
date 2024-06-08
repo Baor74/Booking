@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -28,6 +27,7 @@ public class KhachHangAPI {
             rs.put("status", false);
             rs.put("message", "Call api failed");
             rs.put("data", null);
+            ex.printStackTrace();
         }
         return ResponseEntity.ok(rs);
     }
@@ -42,6 +42,24 @@ public class KhachHangAPI {
             rs.put("status", false);
             rs.put("message", "Call api failed");
             rs.put("data", null);
+            ex.printStackTrace();
+        }
+        return ResponseEntity.ok(rs);
+    }
+    @PostMapping("/save-khachhang")
+    public ResponseEntity<?> saveKhachHang(@RequestBody KhachHang khachHang){
+        Map<String,Object> rs = new HashMap<>();
+        try {
+            KhachHang khachHangs = service.addKhachHang( khachHang);
+            rs.put("status", true);
+            rs.put("message", "Call api success");
+            rs.put("data",khachHangs);
+
+        }catch (Exception ex){
+            rs.put("status", false);
+            rs.put("message", "Call api failed");
+            rs.put("data", null);
+            ex.printStackTrace();
         }
         return ResponseEntity.ok(rs);
     }
