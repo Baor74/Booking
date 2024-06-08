@@ -1,6 +1,6 @@
 package com.example.demo.controller.Service.serviceImpl;
 
-import com.example.demo.controller.Responsitori.PhongRepo;
+import com.example.demo.controller.Responsitory.PhongRepo;
 import com.example.demo.controller.Entity.Phong;
 import com.example.demo.controller.Service.PhongService;
 import org.springframework.beans.factory.annotation.Autowired;

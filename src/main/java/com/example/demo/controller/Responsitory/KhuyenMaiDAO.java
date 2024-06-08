@@ -1,4 +1,4 @@
-package com.example.demo.controller.Responsitori;
+package com.example.demo.controller.Responsitory;
 
 
 import com.example.demo.controller.Entity.KhuyenMai;
