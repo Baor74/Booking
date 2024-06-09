@@ -7,19 +7,26 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Khach_san")
-public class KhachSan {
+public class KhachSan implements Serializable{
+  @Serial
+  private static final long serialVersionUID = 1L;
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Ma_khach_san")
@@ -38,8 +45,9 @@ public class KhachSan {
   private String moTa;
 
   @Column(name = "Xep_hang")
-  private BigDecimal xepHang;
+  private Double  xepHang;
 
-  @OneToMany(mappedBy = "khachSan")
-  private List<Phong> khachSan;
+  @Column(name = "Hinh")
+  private String hinh;
+
 }

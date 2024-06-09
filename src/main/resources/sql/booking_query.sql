@@ -44,7 +44,7 @@ CREATE TABLE Phong
     FOREIGN KEY (Ma_khach_san) REFERENCES Khach_san (Ma_khach_san),
 );
 
-
+select*from Khach_san
 GO
 CREATE TABLE Dat_phong
 (
@@ -58,6 +58,7 @@ CREATE TABLE Dat_phong
     FOREIGN KEY (Ma_khach_hang) REFERENCES Khach_hang (Ma_khach_hang),
     FOREIGN KEY (Ma_phong) REFERENCES Phong (Ma_phong)
 )
+
 GO
 CREATE TABLE Danh_Gia
 (

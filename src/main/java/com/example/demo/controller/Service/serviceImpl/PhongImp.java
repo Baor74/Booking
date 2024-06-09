@@ -14,11 +14,13 @@ public class PhongImp implements PhongService {
     PhongRepo repo;
 
     @Override
-    public List<Phong> findPhongByKhachsan(String KhachSan) {
+    public List<Phong> findByKhachSan(String KhachSan) {
         return repo.findPhongByKhachsan(KhachSan);
     }
 
-    public List<Phong> sortPrice(Float PriceLess)  { return repo.sortPrice(PriceLess);}
+    public List<Phong> sortPrice(Float PriceLess)  {
+        return repo.sortPrice(PriceLess);
+    }
 
     @Override
     public List<Phong> findAll() {

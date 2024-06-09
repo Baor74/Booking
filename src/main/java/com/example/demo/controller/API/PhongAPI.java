@@ -44,7 +44,7 @@ public class PhongAPI {
         try {
             rs.put("status", true);
             rs.put("message", "Call api success");
-            rs.put("data", phongService.findPhongByKhachsan(KhachSan));
+            rs.put("data", phongService.findByKhachSan(KhachSan));
         } catch (Exception ex) {
             rs.put("status", false);
             rs.put("message", "Call api failed");
