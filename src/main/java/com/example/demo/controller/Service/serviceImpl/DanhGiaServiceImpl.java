@@ -14,6 +14,7 @@ public class DanhGiaServiceImpl implements DanhGiaService {
     private DanhGiaRespository danhgiaRespository;
     @Override
     public List<DanhGia> getAllDanhGia() {
-        return List.of();
+
+        return danhgiaRespository.findAll();
     }
 }
