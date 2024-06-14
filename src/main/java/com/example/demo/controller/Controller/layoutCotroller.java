@@ -10,6 +10,6 @@ public class layoutCotroller {
     @GetMapping("/index")
     public String layout(){
 
-        return "layout/index";
+        return "trend";
     }
 }

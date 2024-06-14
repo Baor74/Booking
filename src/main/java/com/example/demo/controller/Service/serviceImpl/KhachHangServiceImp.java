@@ -30,6 +30,6 @@ public class KhachHangServiceImp implements KhachHangService {
 
     @Override
     public void deleteKhachHangById(Integer id) {
-        repo.deleteKhachHangByid(id);
+        repo.deleteKhachHangByMaKhachHang(id);
     }
 }
