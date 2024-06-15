@@ -108,7 +108,7 @@ CREATE TABLE Hinh_anh
 
 -- Insert nè
 INSERT INTO Khach_san
-(Ten_khach_san, Dia_chi, Thanh_pho, Mo_ta, Xep_hang)
+(Ten_khach_san, Dia_chi, Thanh_pho, Mo_ta, Xep_hang, Image)
 VALUES (N'Khách sạn Sài Gòn', N'123 Lê Lai, Q.1', N'TP. Hồ Chí Minh', N'Khách sạn 5 sao', 5.0,N'img1.jpg'),
        (N'Khách sạn Da Lat', N'45 Nguyễn Thi Minh Khai, TP. Đà Lạt', N'Lâm Đồng', N'Khách sạn 4 sao', 4.5,N'img2.jpg'),
        (N'Khách sạn Vinh', N'100 Quang Trung, TP. Vinh', N'Nghệ An', N'Khách sạn 3 sao', 3.0,N'img3.jpg'),
@@ -128,8 +128,15 @@ VALUES (1, 'P101', N'Phòng VIP', 500, N'Có cửa sổ ra biển', 1),
        (4, 'P402', N'Phòng VIP', 800, N'Có bể bơi riêng', 0),
        (5, 'P501', N'Phòng gia đình', 1200, N'Có 3 giường đơn', 1),
        (5, 'P502', N'Phòng đôi', 700, N'Có 2 giường đôi', 0)
-
-
+--dichvu
+       INSERT INTO Dich_vu (Ma_khach_san, Ten_dich_vu, Mo_ta, Gia)
+       VALUES
+           (1, 'Dịch vụ ăn uống', 'Nhà hàng, quầy bar', 150.00),
+           (1, 'Dịch vụ giặt ủi', 'Giặt là nhanh chóng và tiện lợi', 50.00),
+           (2, 'Dịch vụ spa', 'Trải nghiệm nghỉ dưỡng thư giãn', 300.00),
+           (2, 'Dịch vụ hồ bơi', 'Hồ bơi rộng rãi và sạch sẽ', 80.00),
+           (3, 'Dịch vụ phòng gym', 'Phòng tập đầy đủ trang thiết bị', 100.00),
+           (3, 'Dịch vụ golf', 'Sân golf 18 lỗ với cảnh quan đẹp', 500.00);
 --demo truy vấn
 
 SELECT p.* FROM Phong p INNER JOIN Khach_san k ON p.Ma_khach_san = k.Ma_khach_san WHERE k.Ten_khach_san = N'Khách sạn Sài Gòn'
