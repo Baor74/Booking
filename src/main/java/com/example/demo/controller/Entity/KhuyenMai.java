@@ -10,19 +10,26 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
+import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "Khuyen_mai")
 public class KhuyenMai implements Serializable {
+  @Serial
+  private static final long serialVersionUID = 1L;
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "Ma_khuyen_mai")
@@ -45,5 +52,5 @@ public class KhuyenMai implements Serializable {
   @DecimalMin(value = "0.00", inclusive = true)
   @DecimalMax(value = "100.00", inclusive = true)
   @Column(name = "Muc_giam")
-  private BigDecimal mucGiam;
+  private Double mucGiam;
 }
