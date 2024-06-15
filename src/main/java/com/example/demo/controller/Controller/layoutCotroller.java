@@ -9,7 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class layoutCotroller {
     @GetMapping("/index")
     public String layout(){
-
-        return "layout/index";
+        return "trend";
+    }
+    @GetMapping("/detail")
+    public  String detail(){
+        return "detail";
+    }
+    @GetMapping("/hoatdong")
+    public  String hoatdong(){
+        return "hoatdong";
     }
 }

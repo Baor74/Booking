@@ -1,6 +1,8 @@
 package com.example.demo.controller.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import lombok.*;
@@ -20,6 +22,7 @@ public class Phong {
 
     @ManyToOne
     @JoinColumn(name = "Ma_khach_san")
+    @JsonBackReference
     private KhachSan khachSan;
 
     @Column(name = "So_phong")
