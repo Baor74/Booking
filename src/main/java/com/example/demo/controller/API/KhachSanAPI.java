@@ -49,13 +49,13 @@ public class KhachSanAPI {
     }
     return ResponseEntity.ok(result);
   }
-  @GetMapping("findTop10ByXepHang")
-  public ResponseEntity<?> findTop10ByXepHang() {
+  @GetMapping("findTop6ByXepHang")
+  public ResponseEntity<?> findTop6ByXepHang() {
     Map<String, Object> result = new HashMap();
     try {
       result.put("success", true);
       result.put("message", "Call api succes");
-      result.put("data", khachSanService.findTop10ByXepHang());
+      result.put("data", khachSanService.findTop6ByXepHang());
     } catch (Exception e) {
       result.put("success", false);
       result.put("message", "Call api fail");

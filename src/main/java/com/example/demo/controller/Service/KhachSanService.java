@@ -7,6 +7,6 @@ import java.util.List;
 public interface KhachSanService {
   List<KhachSan> findAllKhachSan();
   KhachSan savekhachSan(KhachSan khachSan);
-  List<KhachSan> findTop10ByXepHang();
+  List<KhachSan> findTop6ByXepHang();
   KhachSan getKhachSanById(int maKhachSan);
 }

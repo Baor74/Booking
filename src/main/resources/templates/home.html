@@ -18,19 +18,16 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"/>
 
-  <!-- Template CSS Files -->
+  <!-- CSS Owl Carousel -->
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css"/>
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
-  <link rel="stylesheet" th:href="@{/css/style_trend.css}" />
+  <link rel="stylesheet" th:href="@{/css/style_home.css}"/>
 
 </head>
 <body>
-
 <header class="header-area">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -76,16 +73,10 @@
         </ul>
       </div>
       <div class="header-right-action">
-        <a href="#"
-           class="theme-btn theme-btn-small theme-btn-transparent me-1 text-decoration-none"
-           style="border: none" data-bs-toggle="modal"
-           data-bs-target="#signupPopupForm">Tạo tài khoản</a> <a href="#"
-                                                                  class="theme-btn theme-btn-small text-decoration-none"
-                                                                  data-bs-toggle="modal"
-                                                                  data-bs-target="#loginPopupForm">Đăng
-        nhập</a> <a class="ms-4" href="/cart"><i class="bi bi-cart2"
-                                                 style="color: gray;"></i></a>
-
+        <a href="#" class="theme-btn theme-btn-small theme-btn-transparent me-1"
+           style="border: none">Tạo tài khoản</a>
+        <a href="#" class="theme-btn theme-btn-small" >Đăng nhập</a>
+        <a class="ms-4" href="/cart"><i class="bi bi-cart2" style="color: gray;"></i></a>
       </div>
     </div>
   </nav>
@@ -95,10 +86,10 @@
   <div class="hero-box hero-bg">
     <div class="container">
       <div class="row">
-        <div class="col-lg-10 mx-auto responsive--column-l">
+        <div class="col-lg-10 mx-auto responsive--column-l" style="margin-left: 110px">
           <h2 class="text-light text-center">RONG CHƠI BỐN PHƯƠNG, GIÁ
             VẪN "YÊU THƯƠNG"</h2>
-          <div class="section-tab text-center">
+          <div class="section-tab text-center" style="margin-left: 80px">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item"><a
                   class="nav-link d-flex align-items-center active"
@@ -137,7 +128,7 @@
               </a></li>
             </ul>
           </div>
-          <div class="tab-content search-fields-container" id="myTabContent">
+          <div class="tab-content search-fields-container" id="myTabContent" style="margin-left: 80px">
             <div class="tab-pane fade show active" id="flight"
                  role="tabpanel" aria-labelledby="flight-tab">
               <div class="section-tab section-tab-2 pb-3">
@@ -1307,64 +1298,31 @@
     </svg>
   </div>
 </section>
-
-
-
-
 <section
     class="hotel-area section-bg section-padding overflow-hidden padding-right-100px padding-left-100px">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
         <div class="section-heading text-center">
-          <h2 class="sec__title line-height-55">10 khách sạn tốt nhất ở
-            Vũng Tàu</h2>
+          <h2 class="sec__title line-height-55">
+            Những chỗ nghỉ nổi bật được đề xuất cho quý khách
+          </h2>
         </div>
       </div>
     </div>
-
-    <div class="owl-carousel owl-theme">
-      <div class="card-item mb-0" >
-      <div class="card-img">
-        <a href="#" class="d-block"> <img th:src="@{/img/img2.jpg}" alt="Image"> </a>
-        <div class="add-to-wishlist icon-element" data-bs-toggle="tooltip" data-placement="top" title="Bookmark">
-          <i class="bi bi-heart"></i>
-          </div>
-        </div>
-      <div class="card-body">
-        <h3 class="card-title">
-          <a  class="text-decoration-none" href="#">${khachsan.tenKhachSan}</a>
-          </h3>
-        <p  class="card-meta"></p>
-        <div class="card-rating">
-          <span class="badge text-white">${khachsan.xepHang}/5</span>
-          <span class="review__text">Average</span>
-          <span class="rating__text">(30 Reviews)</span>
-          </div>
-        <div class="card-price d-flex align-items-center justify-content-between">
-          <p>
-            <span class="price__from">From</span> <span class="price__num">$88.00</span>
-            <span class="price__text">Per night</span>
-            </p>
-          <a href="#" class="btn-text">See details<i  class="la la-angle-right"></i>  </a>
-          </div>
-        </div>
+    <div class="row padding-top-50px">
+      <div class="owl-carousel">
       </div>
     </div>
   </div>
 </section>
-<div class="container mt-5">
-  <h1 class="mb-4 text-center">User List</h1>
-  <div class="row" id="userRow"></div>
-</div>
 
 <section class="destination-area section--padding">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-8">
         <div class="section-heading">
-          <h2 class="sec__title">Khách sạn & chỗ ở tốt nhất tại Vũng
-            Tàu</h2>
+          <h2 class="sec__title">Top khách sạn tốt nhất</h2>
         </div>
       </div>
       <div class="col-lg-4">
@@ -1373,139 +1331,7 @@
         </div>
       </div>
     </div>
-    <div class="row padding-top-50px">
-      <div class="col-lg-4">
-        <div class="card-item destination-card">
-          <div class="card-img">
-            <img src="/img/destination-img2.jpg"
-                 alt="destination-img"/> <span class="badge">new york</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">
-              <a href="#">Main Street Park</a>
-            </h3>
-            <div class="card-rating d-flex align-items-center">
-								<span class="ratings d-flex align-items-center me-1"> <i
-                    class="la la-star"></i> <i class="la la-star"></i> <i
-                    class="la la-star"></i> <i class="la la-star-o"></i> <i
-                    class="la la-star-o"></i>
-								</span> <span class="rating__text">(70694 Reviews)</span>
-            </div>
-            <div
-                class="card-price d-flex align-items-center justify-content-between">
-              <p class="tour__text">50 Tours</p>
-              <p>
-                <span class="price__from">Price</span> <span class="price__num">$58.00</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card-item destination-card">
-          <div class="card-img">
-            <img src="/img/destination-img3.jpg"
-                 alt="destination-img"/> <span class="badge">chicago</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">
-              <a href="#">Chicago Cultural Center</a>
-            </h3>
-            <div class="card-rating d-flex align-items-center">
-								<span class="ratings d-flex align-items-center me-1"> <i
-                    class="la la-star"></i> <i class="la la-star"></i> <i
-                    class="la la-star"></i> <i class="la la-star"></i> <i
-                    class="la la-star-o"></i>
-								</span> <span class="rating__text">(70694 Reviews)</span>
-            </div>
-            <div
-                class="card-price d-flex align-items-center justify-content-between">
-              <p class="tour__text">50 Tours</p>
-              <p>
-                <span class="price__from">Price</span> <span class="price__num">$68.00</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card-item destination-card">
-          <div class="card-img">
-            <img src="/img/destination-img4.jpg"
-                 alt="destination-img"/> <span class="badge">Hong Kong</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">
-              <a href="#">Lugard Road Lookout</a>
-            </h3>
-            <div class="card-rating d-flex align-items-center">
-								<span class="ratings d-flex align-items-center me-1"> <i
-                    class="la la-star"></i> <i class="la la-star"></i> <i
-                    class="la la-star"></i> <i class="la la-star-o"></i> <i
-                    class="la la-star-o"></i>
-								</span> <span class="rating__text">(70694 Reviews)</span>
-            </div>
-            <div
-                class="card-price d-flex align-items-center justify-content-between">
-              <p class="tour__text">150 Tours</p>
-              <p>
-                <span class="price__from">Price</span> <span class="price__num">$79.00</span>
-                <span class="price__num before-price">$89.00</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card-item destination-card">
-          <div class="card-img">
-            <img src="/img/destination-img5.jpg"
-                 alt="destination-img"/> <span class="badge">Las Vegas</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">
-              <a href="#">Planet Hollywood Resort</a>
-            </h3>
-            <div class="card-rating d-flex align-items-center">
-								<span class="ratings d-flex align-items-center me-1"> <i
-                    class="la la-star"></i> <i class="la la-star"></i> <i
-                    class="la la-star"></i> <i class="la la-star"></i> <i
-                    class="la la-star-o"></i>
-								</span> <span class="rating__text">(70694 Reviews)</span>
-            </div>
-            <div
-                class="card-price d-flex align-items-center justify-content-between">
-              <p class="tour__text">50 Tours</p>
-              <p>
-                <span class="price__from">Price</span> <span class="price__num">$88.00</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="card-item destination-card">
-          <div class="card-img">
-            <img src="/img/destination-img.jpg"
-                 alt="destination-img"/> <span class="badge">Shanghai</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">
-              <a href="#">Oriental Pearl TV Tower</a>
-            </h3>
-            <div class="card-rating d-flex align-items-center">
-								<span class="ratings d-flex align-items-center me-1"> <i
-                    class="la la-star"></i> <i class="la la-star"></i> <i
-                    class="la la-star"></i> <i class="la la-star"></i> <i
-                    class="la la-star"></i>
-								</span> <span class="rating__text">(70694 Reviews)</span>
-            </div>
-            <div
-                class="card-price d-flex align-items-center justify-content-between">
-              <p class="tour__text">50 Tours</p>
-              <p>
-                <span class="price__from">Price</span> <span class="price__num">$58.00</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="row padding-top-50px" id="getTop5">
     </div>
   </div>
 </section>
@@ -1728,161 +1554,16 @@
     </div>
   </div>
 </section>
-<div class="modal-popup">
-  <div class="modal fade" id="signupPopupForm" tabindex="-1"
-       role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="">
-            <h5 class="modal-title title" id="exampleModalLongTitle">
-              Tạo tài khoản</h5>
-            <div class="text-gray-400 fw-bold">Bạn đã có tài khoản?
-              <a href="#" class="link-primary ">Đăng nhập tại đây</a></div>
-          </div>
-          <button type="button" class="btn-close close"
-                  data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="contact-form-action">
-            <form method="post">
-              <div class="fv-row mb-10">
-                <label class="form-label fs-6 fw-bolder text-dark">Tài khoản</label>
-                <input class="form-control form-control-lg form-control-solid" type="text"
-                       name="username" autocomplete="off" required="required"/>
-              </div>
-              <div class="fv-row mb-10">
-                <label class="form-label fs-6 fw-bolder text-dark">Email</label>
-                <input class="form-control form-control-lg form-control-solid" type="email"
-                       name="email" autocomplete="off" required="required"/>
-              </div>
-              <div class="fv-row mb-10">
-                <label class="form-label fs-6 fw-bolder text-dark">Mật khẩu</label>
-                <input class="form-control form-control-lg form-control-solid" type="password"
-                       name="password" autocomplete="off" required="required"/>
-              </div>
-              <div class="fv-row mb-10">
-                <label class="form-label fs-6 fw-bolder text-dark">Xác nhận mật khẩu</label>
-                <input class="form-control form-control-lg form-control-solid" type="password"
-                       name="password" autocomplete="off" required="required"/>
-              </div>
-              <div class="btn-box pt-3 pb-4">
-                <button type="button" class="theme-btn w-100 text-light"
-                        style="background-color: rgb(0, 158, 247);">
-                  Tạo tài khoaản
-                </button>
-              </div>
-              <div class="action-box text-center">
-                <div class="text-center text-muted text-uppercase fw-bolder">or</div>
-                <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-3">
-                  <img alt="Logo" src="../static/img/google-icon.svg" class="h-20px me-3"/>Continue
-                  with Google</a>
-                <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-3">
-                  <img alt="Logo" src="../static/img/facebook-4.svg" class="h-20px me-3"/>Continue
-                  with Facebook</a>
-                <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100">
-                  <img alt="Logo" src="../static/img/apple-black.svg" class="h-20px me-3" style="width: 20px"/>Continue
-                  with Apple</a>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal-popup">
-  <div class="modal fade" id="loginPopupForm" tabindex="-1"
-       role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div>
-            <h5 class="modal-title title" id="exampleModalLongTitle2">
-              Đăng nhập</h5>
-            <div class="text-gray-400 fw-bold">Bạn chưa có tài khoản?
-              <a href="#" class="link-primary ">Tạo tài khoản</a></div>
-          </div>
-          <button type="button" class="btn-close close"
-                  data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="contact-form-action">
-            <form method="post">
-              <div class="fv-row mb-10">
-                <label class="form-label fs-6 fw-bolder text-dark">Tài khoản</label>
-                <input class="form-control form-control-lg form-control-solid" type="text"
-                       name="username" autocomplete="off" required="required"/>
-              </div>
-              <div class="input-box">
-                <label class="form-label fs-6 fw-bolder text-dark">Mật khẩu</label>
-                <div class="form-group mb-2">
-                  <input class="form-control form-control-lg form-control-solid" type="password"
-                         name="password" autocomplete="off" required="required"/>
-                </div>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="custom-checkbox mb-0">
-                    <input type="checkbox" class="form-check-input"
-                           id="rememberchb"/> <label for="rememberchb">Remember
-                    me</label>
-                  </div>
-                  <p class="forgot-password">
-                    <a href="#">Forgot Password?</a>
-                  </p>
-                </div>
-              </div>
-              <div class="btn-box pt-3 pb-4">
-                <button type="button" class="theme-btn w-100 text-light"
-                        style="background-color: rgb(0, 158, 247);">
-                  Đăng nhập
-                </button>
-              </div>
-              <div class="action-box text-center">
-                <div class="text-center text-muted text-uppercase fw-bolder">or</div>
-                <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-3">
-                  <img alt="Logo" src="../static/img/google-icon.svg" class="h-20px me-3"/>Continue
-                  with Google</a>
-                <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-3">
-                  <img alt="Logo" src="../static/img/facebook-4.svg" class="h-20px me-3"/>Continue
-                  with Facebook</a>
-                <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100">
-                  <img alt="Logo" src="../static/img/apple-black.svg" class="h-20px me-3" style="width: 20px"/>Continue
-                  with Apple</a>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Axios -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- JavaScript Owl Carousel -->
 <script
     src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-<script th:src="@{/js/trend_JS}"></script>
-<script>
-  var owl = $('.owl-carousel');
-  owl.owlCarousel({
-    items: 4,
-    loop: true,
-    margin: 10,
-    autoplay: true,
-    autoplayTimeout: 40000,
-    autoplayHoverPause: true
-  });
-  //load carousel khachsan
-  const services = new UserManager();
-  $(document).ready(async function() {
-    await services.loadInit();
-  });
-</script>
+<!-- JavaScript Bootstrap 5 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="/js/home_JS.js"></script>
 </body>
 </html>

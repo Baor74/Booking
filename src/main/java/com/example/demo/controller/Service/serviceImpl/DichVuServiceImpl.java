@@ -1,7 +1,7 @@
 package com.example.demo.controller.Service.serviceImpl;
 
 import com.example.demo.controller.Entity.DichVu;
-import com.example.demo.controller.Responsitori.DichVuRepository;
+import com.example.demo.controller.Responsitory.DichVuRepo;
 import com.example.demo.controller.Service.DichVuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,10 +13,11 @@ import java.util.Optional;
 public class DichVuServiceImpl implements DichVuService {
 
     @Autowired
-    private DichVuRepository dichVuRepository;
+    private DichVuRepo dichVuRepository;
 
     @Override
     public List<DichVu> getAllDichVu() {
+
         return dichVuRepository.findAll();
     }
 
@@ -28,6 +29,7 @@ public class DichVuServiceImpl implements DichVuService {
 
     @Override
     public DichVu saveDichVu(DichVu dichVu) {
+
         return dichVuRepository.save(dichVu);
     }
 }

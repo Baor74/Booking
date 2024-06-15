@@ -1,10 +1,8 @@
-package com.example.demo.controller.Responsitori;
+package com.example.demo.controller.Responsitory;
 
 
 import com.example.demo.controller.Entity.KhuyenMai;
-import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository

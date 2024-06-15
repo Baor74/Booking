@@ -1,9 +1,7 @@
 package com.example.demo.controller.Service.serviceImpl;
 
-import com.example.demo.controller.Entity.KhachSan;
 import com.example.demo.controller.Entity.KhuyenMai;
-import com.example.demo.controller.Responsitori.KhachSanRepo;
-import com.example.demo.controller.Responsitori.KhuyenMaiRepo;
+import com.example.demo.controller.Responsitory.KhuyenMaiRepo;
 import com.example.demo.controller.Service.KhuyenMaiService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

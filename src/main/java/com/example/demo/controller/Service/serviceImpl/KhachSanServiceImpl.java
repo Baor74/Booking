@@ -1,7 +1,7 @@
 package com.example.demo.controller.Service.serviceImpl;
 
 import com.example.demo.controller.Entity.KhachSan;
-import com.example.demo.controller.Responsitori.KhachSanRepo;
+import com.example.demo.controller.Responsitory.KhachSanRepo;
 import com.example.demo.controller.Service.KhachSanService;
 import java.util.List;
 import java.util.Optional;
@@ -22,8 +22,8 @@ public class KhachSanServiceImpl implements KhachSanService {
     return khachSanRepo.save(khachSan);
   }
   @Override
-  public List<KhachSan> findTop10ByXepHang() {
-    return khachSanRepo.findTop10ByXepHang();
+  public List<KhachSan> findTop6ByXepHang() {
+    return khachSanRepo.findTop6ByXepHang();
   }
   @Override
   public KhachSan getKhachSanById(int maKhachSan) {
