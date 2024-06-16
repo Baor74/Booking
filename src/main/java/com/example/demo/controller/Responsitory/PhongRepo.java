@@ -1,4 +1,4 @@
-package com.example.demo.controller.Responsitory;
+package com.example.demo.controller.Responsitori;
 
 
 import com.example.demo.controller.Entity.Phong;

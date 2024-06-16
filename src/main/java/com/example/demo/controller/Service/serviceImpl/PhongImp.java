@@ -1,6 +1,6 @@
 package com.example.demo.controller.Service.serviceImpl;
 
-import com.example.demo.controller.Responsitory.PhongRepo;
+import com.example.demo.controller.Responsitori.PhongRepo;
 import com.example.demo.controller.Entity.Phong;
 import com.example.demo.controller.Service.PhongService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +14,11 @@ public class PhongImp implements PhongService {
     PhongRepo repo;
 
     @Override
-    public List<Phong> findByKhachSan(String KhachSan) {
+    public List<Phong> findPhongByKhachsan(String KhachSan) {
         return repo.findPhongByKhachsan(KhachSan);
     }
 
-    public List<Phong> sortPrice(Float PriceLess)  {
-        return repo.sortPrice(PriceLess);
-    }
+    public List<Phong> sortPrice(Float PriceLess)  { return repo.sortPrice(PriceLess);}
 
     @Override
     public List<Phong> findAll() {

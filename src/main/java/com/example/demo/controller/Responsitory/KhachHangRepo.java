@@ -8,10 +8,12 @@ import java.util.List;
 
 @Repository
 public interface KhachHangRepo extends JpaRepository<KhachHang, Integer> {
-    @Override
+
     List<KhachHang> findAll();
 
     KhachHang findKhachHangByUsername(String username);
 
+    KhachHang save(KhachHang khachHang);
 
+    void deleteKhachHangByMaKhachHang(Integer maKhachHang);
 }

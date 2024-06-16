@@ -1,6 +1,7 @@
 package com.example.demo.controller.API;
 
 import com.example.demo.controller.Entity.Phong;
+import com.example.demo.controller.Responsitori.PhongRepo;
 import com.example.demo.controller.Service.PhongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +44,7 @@ public class PhongAPI {
         try {
             rs.put("status", true);
             rs.put("message", "Call api success");
-            rs.put("data", phongService.findByKhachSan(KhachSan));
+            rs.put("data", phongService.findPhongByKhachsan(KhachSan));
         } catch (Exception ex) {
             rs.put("status", false);
             rs.put("message", "Call api failed");

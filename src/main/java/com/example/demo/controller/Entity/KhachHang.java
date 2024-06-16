@@ -15,7 +15,8 @@ import java.util.Date;
 public class KhachHang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "Ma_khach_hang")
+    private Integer maKhachHang;
 
     @Column(name = "Ten_tai_khoan", unique = true)
     private String username;
@@ -38,8 +39,8 @@ public class KhachHang {
     @Column(name = "Email" , unique = true)
     private String email;
 
-    @Column(name = "STD", unique = true)
-    private String std;
+    @Column(name = "SDT", unique = true)
+    private String sdt;
 
 
 
