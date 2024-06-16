@@ -1,12 +1,7 @@
 package com.example.demo.controller.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
@@ -40,6 +35,6 @@ public class KhachSan {
   @Column(name = "Xep_hang")
   private BigDecimal xepHang;
 
-  @OneToMany(mappedBy = "khachSan")
-  private List<Phong> khachSan;
+  @OneToMany(mappedBy = "khachSan",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  private List<Phong> listPhong;
 }
