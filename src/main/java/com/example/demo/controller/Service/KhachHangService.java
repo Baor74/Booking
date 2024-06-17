@@ -17,4 +17,5 @@ public interface KhachHangService {
     @Transactional
     void deleteKhachHangById(Integer id);
 
+
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class KhachHangServiceImp implements KhachHangService {
+    public class KhachHangServiceImp implements KhachHangService {
 
     @Autowired
     private KhachHangRepo repo;
@@ -32,4 +32,6 @@ public class KhachHangServiceImp implements KhachHangService {
     public void deleteKhachHangById(Integer id) {
         repo.deleteKhachHangByMaKhachHang(id);
     }
+
+
 }
