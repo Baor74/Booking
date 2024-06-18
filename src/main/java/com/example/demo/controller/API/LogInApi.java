@@ -28,7 +28,10 @@ public class LogInApi {
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model) {
+    public String login(@RequestParam("username") String username,
+                        @RequestParam("password") String password,
+                        Model model) {
+
         KhachHang user = khachHangRepo.findKhachHangByUsername(username);
 
         if (user != null && user.getPassword().equals(password)) {
