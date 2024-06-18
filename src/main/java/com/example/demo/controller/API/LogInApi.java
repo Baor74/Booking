@@ -46,27 +46,37 @@ public class LogInApi {
         }
     }
 
-//    @GetMapping("/login")
-//    public String index(Model model) {
-//        return "account/DangNhap";
-//    }
-////
-//    @GetMapping("/home")
-//    public String home(Model model) {
-//        return "index";
-//    }
+    @GetMapping("/login")
+    public String index(Model model) {
+        return "account/DangNhap";
+    }
+//
+    @GetMapping("/home")
+    public String home(Model model) {
+        return "home";
+    }
 
 
-    @PostMapping("/signup")
-    public String signup(@RequestParam("username") String username,
-                         @RequestParam("password") String password,
-                         @RequestParam("name") String fullname,
-                         @RequestParam("gender") Boolean gender,
-                         @RequestParam("birthday") @DateTimeFormat(pattern = "yyyy-MM-dd") Date birthday,
-                         @RequestParam("address") String address,
-                         @RequestParam("email") String email,
-                         @RequestParam("phone") String sdt,
-                         Model model) {
+
+
+
+
+@GetMapping("/register")
+        public String signup(Model model) {
+        return "account/DangKy";
+    }
+
+
+    @PostMapping("/register")
+    public String register(@RequestParam("username") String username,
+                           @RequestParam("password") String password,
+                           @RequestParam("name") String fullname,
+                           @RequestParam("gender") Boolean gender,
+                           @RequestParam("birthday") @DateTimeFormat(pattern = "yyyy-MM-dd") Date birthday,
+                           @RequestParam("address") String address,
+                           @RequestParam("email") String email,
+                           @RequestParam("sdt") String sdt,
+                           Model model) {
 
         KhachHang existingUser = khachHangRepo.findKhachHangByUsername(username);
 
@@ -92,43 +102,6 @@ public class LogInApi {
         }
     }
 }
-//    public String signup(Model model) {
-//        return "account/DangKy";
-//    }
 
 
-    //@GetMapping("/register")
-//    public String register(@RequestParam("username") String username,
-//                           @RequestParam("password") String password,
-//                           @RequestParam("name") String fullname,
-//                           @RequestParam("gender") Boolean gender,
-//                           @RequestParam("birthday") Date birthday,
-//                           @RequestParam("address") String address,
-//                           @RequestParam("email") String email,
-//                           @RequestParam("phone") String sdt,
-//                           Model model) {
-//
-//        KhachHang existingUser = khachHangRepo.findKhachHangByUsername(username);
-//
-//        if (existingUser == null) {
-//            KhachHang newUser = new KhachHang();
-//            newUser.setUsername(username);
-//            newUser.setPassword(password);
-//            newUser.setFullname(fullname);
-//            newUser.setGender(gender);
-//            newUser.getBirthday();
-//            newUser.setAddress(address);
-//            newUser.setEmail(email);
-//            newUser.setSdt(sdt);
-//            khachHangRepo.save(newUser);
-//
-//            model.addAttribute("registrationSuccess", true);
-//            logger.info("Đăng ký thành công cho người dùng: {}", username);
-//            return "redirect:/login"; // Chuyển hướng đến trang đăng nhập sau khi đăng ký thành công
-//        } else {
-//            model.addAttribute("registrationSuccess", false);
-//            logger.error("Đăng ký thất bại: Người dùng đã tồn tại với tên đăng nhập: {}", username);
-//            return "account/DangKy"; // Hiển thị lại trang đăng ký nếu thất bại
-//        }
-//    }
-//}
+

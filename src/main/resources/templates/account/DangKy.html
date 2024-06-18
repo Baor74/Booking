@@ -87,8 +87,9 @@
   </nav>
 </header>
 
-<div class="container">
-  <form class="form w-100" action="/signup" method="post">
+
+  <form class="form w-100" action="/register" method="post">
+    <div class="container">
     <div class="mb-10 text-center">
       <h1 class="text-dark mb-3">Tạo tài khoản</h1>
       <div class="text-gray-400 fw-bold fs-4">Bạn đã có tài khoản
@@ -117,27 +118,27 @@
     </div>
     <div class="fv-row mb-7">
       <label class="form-label fw-bolder text-dark fs-6">Họ và tên</label>
-      <input  class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="name" />
+      <input  class="form-control form-control-lg form-control-solid"  placeholder="" name="name" />
     </div>
     <div class="fv-row mb-7">
       <label class="form-label fw-bolder text-dark fs-6">Giới tính</label>
-      <input  class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="gender" />
+      <input  class="form-control form-control-lg form-control-solid"  placeholder="" name="gender" />
     </div>
     <div class="fv-row mb-7">
       <label class="form-label fw-bolder text-dark fs-6">Ngày sinh</label>
-      <input  class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="birthday" />
+      <input type="text" class="form-control form-control-lg form-control-solid"  placeholder="" name="birthday" />
     </div>
     <div class="fv-row mb-7">
       <label class="form-label fw-bolder text-dark fs-6">Địa chỉ</label>
-      <input  class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="address" />
+      <input  class="form-control form-control-lg form-control-solid"  placeholder="" name="address" />
     </div>
     <div class="fv-row mb-7">
       <label class="form-label fw-bolder text-dark fs-6">Email</label>
-      <input class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="email"/>
+      <input class="form-control form-control-lg form-control-solid" placeholder="" name="email"/>
     </div>
     <div class="fv-row mb-7">
       <label class="form-label fw-bolder text-dark fs-6">Số điện thoại</label>
-      <input class="form-control form-control-lg form-control-solid" type="email" placeholder="" name="sdt"/>
+      <input class="form-control form-control-lg form-control-solid"  placeholder="" name="sdt"/>
     </div>
 
 <!--    <div class="fv-row mb-5">-->
@@ -149,9 +150,11 @@
         <span class="indicator-label">Đăng ký</span>
       </button>
     </div>
+    </div>
   </form>
-
 </div>
+
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Axios -->
