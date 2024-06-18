@@ -25,6 +25,11 @@ public class KhachSanServiceImpl implements KhachSanService {
   public List<KhachSan> findTop6ByXepHang() {
     return khachSanRepo.findTop6ByXepHang();
   }
+
+  @Override
+  public Optional<KhachSan> getKhachSanByTenKhachSan(String tenKhachSan) {
+    return khachSanRepo.findByTenKhachSan(tenKhachSan);
+  }
   @Override
   public KhachSan getKhachSanById(int maKhachSan) {
     Optional<KhachSan> optionalProduct = khachSanRepo.findById(maKhachSan);
