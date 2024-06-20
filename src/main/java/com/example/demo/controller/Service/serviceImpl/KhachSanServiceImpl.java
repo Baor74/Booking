@@ -19,6 +19,7 @@ public class KhachSanServiceImpl implements KhachSanService {
   }
   @Override
   public KhachSan savekhachSan(KhachSan khachSan) {
+
     return khachSanRepo.save(khachSan);
   }
   @Override

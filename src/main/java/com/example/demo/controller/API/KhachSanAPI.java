@@ -14,26 +14,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("api/khachsan-api")
 @RestController
+@RequestMapping("api/khachsan-api")
 @RequiredArgsConstructor
 public class KhachSanAPI {
 
   private final KhachSanService khachSanService;
 
-  @GetMapping("getAllKhachSan")
-  public ResponseEntity<?> doGetAllKhachSan() {
-    Map<String, Object> result = new HashMap();
+  @GetMapping("/getAllKhachSan")
+  public ResponseEntity<?> doGetAllKhachSan(){
+    Map<String, Object> rs = new HashMap();
     try {
-      result.put("success", true);
-      result.put("message", "Call api succes");
-      result.put("data", khachSanService.findAllKhachSan());
-    } catch (Exception e) {
-      result.put("success", false);
-      result.put("message", "Call api fail");
-      result.put("data", null);
+
+      rs.put("status", true);
+      rs.put("message", "Call api success");
+      rs.put("data",khachSanService.findAllKhachSan());
+    } catch (Exception ex) {
+      rs.put("status", false);
+      rs.put("message", "Call api failed");
+      rs.put("data", null);
     }
-    return ResponseEntity.ok(result);
+    return ResponseEntity.ok(rs);
   }
   @PostMapping("saveKhachSan")
   public ResponseEntity<?> saveKhachSan(@RequestBody KhachSan KhachSan) {
@@ -60,7 +61,6 @@ public class KhachSanAPI {
       result.put("success", false);
       result.put("message", "Call api fail");
       result.put("data", null);
-      e.printStackTrace();
     }
     return ResponseEntity.ok(result);
   }
