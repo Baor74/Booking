@@ -177,7 +177,7 @@
                         </div>
                         <div class="col-md-3 text-center card">
                             <button class="btn btn-primary mb-2">Đặt ngay</button>
-                            <button class="btn btn-secondary mb-2">Thêm vào xe đẩy hàng</button>
+                            <button href="/cart/add?id=P001" class="btn btn-secondary mb-2 cart">Thêm vào xe đẩy hàng</button>
                             <p class="text-success">KHÔNG SỢ RỦI RO<br>Hủy không tốn phí</p>
                             <p class="text-success">Còn ít phòng</p>
                         </div>
@@ -199,7 +199,7 @@
                         </div>
                         <div class="col-md-3 text-center card">
                             <button class="btn btn-primary mb-2">Đặt ngay</button>
-                            <button class="btn btn-secondary mb-2">Thêm vào xe đẩy hàng</button>
+                            <button href="/cart/add?id=P001" class="btn btn-secondary mb-2 cart">Thêm vào xe đẩy hàng</button>
                             <p class="text-danger">Phòng cuối cùng của chúng tôi!</p>
                         </div>
                     </div>
@@ -207,6 +207,56 @@
             </div>
         </div>
     </div>
+    <script>
+        function addToCart(Ma_khach_hang,Ma_phong, Ngay_den, Ngay_tra ,Trang_thai,Gia_phong) {
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
+            let itemIndex = cart.findIndex(item => item.Ma_phong === Ma_phong);
+
+            if (itemIndex !== -1) {
+                window.alert("Phòng đã đc đặt");
+            } else {
+                // Nếu sản phẩm chưa có trong giỏ hàng, thêm vào với số lượng là 1
+                cart.push({ Ma_khach_hang : Ma_khach_hang,
+                    Ma_phong : Ma_phong,
+                    Ngay_den: Ngay_den,
+                    Ngay_tra: Ngay_tra ,
+                    Trang_thai : Trang_thai,
+                    Gia_phong : Gia_phong});
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            console.log('Cart updated:', cart);
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.cart').forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    // Lấy giá trị id từ href
+                    // const urlParams = new URLSearchParams(this.getAttribute('href').split('?')[1]);
+                    // const Ma_phong = urlParams.get('id');
+
+                    // Thay thế các giá trị dưới đây bằng các giá trị thực tế
+                    const Ma_phong = "P101"
+                    const Ma_khach_hang = "KH001";
+                    const Ngay_den = "2023-06-20";
+                    const Ngay_tra = "2023-06-25";
+                    const Trang_thai = "Đã đặt";
+                    const Gia_phong = 1322751;
+
+                    addToCart(Ma_khach_hang, Ma_phong, Ngay_den, Ngay_tra, Trang_thai, Gia_phong);
+
+                    // Chuyển hướng đến trang giỏ hàng
+                    window.location.href = '/cart';
+                });
+            });
+        });
+    </script>
 </main>
 <footer>
 
