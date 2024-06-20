@@ -24,15 +24,14 @@ public class HomeController {
   public String index() {
     return "home";
   }
-
+  @RequestMapping("/detail")
+  public String shop_detail() {
+    return "detail";
+  }
   @GetMapping("/shop")
-  public String shop(Model model, @RequestParam("p") Optional<Integer> p, @RequestParam("name") Optional<String> name) {
-    return "shop";
+  public String shop() {
+    return "hotel";
   }
 
-  @GetMapping("/shop/detail/{id}")
-  public String shop_detail(Model model, @PathVariable("id") Integer id) {
 
-    return "shop-details";
-  }
 }

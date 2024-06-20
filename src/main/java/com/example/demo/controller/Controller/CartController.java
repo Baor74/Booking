@@ -23,7 +23,8 @@ public class CartController {
   // tt cart theo tk username
   @GetMapping("/cart")
   public String cart(Model model) {
-    return "layout/cart";
+
+    return "cart";
   }
 
   @GetMapping("/cart/add")
