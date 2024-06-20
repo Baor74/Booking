@@ -21,7 +21,7 @@ public class LoginController {
 
     @GetMapping("/sign-in")
     public String signin() {
-        return "signin";
+        return "account/DangNhap";
     }
     @PostMapping("/sign-in")
     public String signin_signin(Model model) {
@@ -29,8 +29,8 @@ public class LoginController {
     }
 
     @GetMapping("/sign-up")
-    public String signup(Model model, @ModelAttribute("account") KhachHang khachHang) {
-        return "";
+    public String signup() {
+        return "account/DangKy";
     }
 
     @PostMapping("/sign-up")
