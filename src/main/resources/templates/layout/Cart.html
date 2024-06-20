@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body ng-app="myapp">
+<div class="container mt-5">
+    <div id="cart-items" class="row"></div>
+    <div class="row mt-3">
+        <div class="col">
+            <h3>Tổng tiền: <span id="total-price">0</span> đ</h3>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+<script>
+
+// add function này vào các button của cart
+    function addToCart(Ma_khach_hang,Ma_phong, Ngay_den, Ngay_tra ,Trang_thai,Gia_phong) {
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
+        let itemIndex = cart.findIndex(item => item.Ma_phong === Ma_phong);
+
+        if (itemIndex !== -1) {
+            window.alert("Phòng đã đc đặt");
+        } else {
+            // Nếu sản phẩm chưa có trong giỏ hàng, thêm vào với số lượng là 1
+            cart.push({ Ma_khach_hang : Ma_khach_hang,
+                Ma_phong : Ma_phong,
+                Ngay_den: Ngay_den,
+                Ngay_tra: Ngay_tra ,
+
+                Trang_thai : Trang_thai,
+                Gia_phong : Gia_phong});
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        console.log('Cart updated:', cart);
+    }
+
+
+
+
+function displayCartItems() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalPrice = 0;
+
+    cartItemsContainer.innerHTML = ''; // Clear previous items
+
+    cart.forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('col-12', 'col-md-6', 'col-lg-4', 'mb-3');
+
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card', 'h-100');
+
+        const cardContent = `
+                <div class="card-body">
+                    <h5 class="card-title">Mã khách hàng: ${item.Ma_khach_hang}</h5>
+                    <p class="card-text">Mã phòng: ${item.Ma_phong}</p>
+                    <p class="card-text">Ngày đến: ${item.Ngay_den}</p>
+                    <p class="card-text">Ngày trả: ${item.Ngay_tra}</p>
+                    <p class="card-text">Trạng thái: ${item.Trang_thai}</p>
+                    <p class="card-text">Giá phòng: ${item.Gia_phong} đ</p>
+                    <p class="card-text">Số lượng:
+                        <button class="btn btn-secondary" onclick="updateCartItemQuantity('${item.Ma_phong}', -1)">-</button>
+                        <span> ${item.quantity} </span>
+                        <button class="btn btn-secondary" onclick="updateCartItemQuantity('${item.Ma_phong}', 1)">+</button>
+                    </p>
+                    <p class="card-text">Tổng tiền: ${item.Gia_phong * item.quantity} đ</p>
+                    <button class="btn btn-danger" onclick="removeCartItem('${item.Ma_phong}')">Xóa</button>
+                </div>
+            `;
+
+        cardBody.innerHTML = cardContent;
+        card.appendChild(cardBody);
+        cartItemsContainer.appendChild(card);
+
+        totalPrice += item.Tong_tien * item.quantity;
+    });
+
+    totalPriceElement.textContent = totalPrice + ' đ';
+}
+
+function updateCartItemQuantity(Ma_phong, change) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    let itemIndex = cart.findIndex(item => item.Ma_phong === Ma_phong);
+
+    if (itemIndex !== -1) {
+        cart[itemIndex].quantity += change;
+
+        if (cart[itemIndex].quantity <= 0) {
+            cart.splice(itemIndex, 1);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCartItems();
+    }
+}
+
+function removeCartItem(Ma_phong) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart = cart.filter(item => item.Ma_phong !== Ma_phong);
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCartItems();
+}
+
+document.addEventListener('DOMContentLoaded', displayCartItems);
+</script>
+</body>
+</html>

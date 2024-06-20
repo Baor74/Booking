@@ -21,28 +21,28 @@ public class CartController {
   @Autowired
   SessionService session;
   // tt cart theo tk username
-  @GetMapping("/shop/cart")
+  @GetMapping("/cart")
   public String cart(Model model) {
+    return "layout/cart";
+  }
+
+  @GetMapping("/cart/add")
+  public String cart_add(Model model, @RequestParam("id") Integer id) {
     return "shopping-cart";
   }
 
-  @GetMapping("/shop/cart/add")
-  public String cart_add(Model model, @RequestParam("id") Integer id, @RequestParam("qty") Integer qty) {
-    return "shopping-cart";
-  }
-
-  @GetMapping("/shop/cart/update")
+  @GetMapping("/cart/update")
   public String cart_update(Model model, @RequestParam("id") Integer id, @RequestParam("qty") Integer qty) {
 
     return "shopping-cart";
   }
 
-  @GetMapping("/shop/cart/delete")
+  @GetMapping("/cart/delete")
   public String cart_delete(Model model, @RequestParam("id") Integer id) {
     return "shopping-cart";
   }
 
-  @PostMapping("/shop/order")
+  @PostMapping("/order")
   public String shopping_order(Model model, @RequestParam("address") String address) {
 
     return "shopping-cart";
