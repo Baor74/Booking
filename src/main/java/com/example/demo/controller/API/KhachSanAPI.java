@@ -4,15 +4,12 @@ import com.example.demo.controller.Entity.KhuyenMai;
 import com.example.demo.controller.Service.KhachSanService;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("api/khachsan-api")
 @RestController
@@ -41,7 +38,7 @@ public class KhachSanAPI {
     try {
       result.put("success", true);
       result.put("message", "Call api succes");
-      result.put("data", khachSanService.savekhachSan(KhachSan));
+      result.put("data", khachSanService.saveKhachSan(KhachSan));
     } catch (Exception e) {
       result.put("success", false);
       result.put("message", "Call api fail");
@@ -77,5 +74,12 @@ public class KhachSanAPI {
       result.put("data", null);
     }
     return ResponseEntity.ok(result);
+  }
+  // API lấy thông tin khách sạn theo tên
+  @GetMapping("/{tenKhachSan}")
+  public ResponseEntity<KhachSan> getKhachSanByTenKhachSan(@PathVariable("tenKhachSan") String tenKhachSan) {
+    Optional<KhachSan> khachSan = khachSanService.getKhachSanByTenKhachSan(tenKhachSan);
+    return khachSan.map(ResponseEntity::ok)  // Nếu tìm thấy khách sạn, trả về 200 OK
+            .orElse(ResponseEntity.notFound().build()); // Nếu không tìm thấy, trả về HTTP 404
   }
 }
