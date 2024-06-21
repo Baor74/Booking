@@ -15,7 +15,7 @@ const getAdminKhachHang = async () => {
                     <td>${khachhang.email}</td>
                     <td>${khachhang.sdt}</td>
                     <td>
-                      <a style="background-color: #28d5a7;border:none;" class="edit-btn theme-btn theme-btn-small me-1" data-maKhachHang="${khachhang.maKhachHang}"><i class="bi bi-pencil-square"></i></a> 
+                      <a style="background-color: #28d5a7;border:none;" class="edit-btn theme-btn theme-btn-small btn-edit" data-username="${khachhang.username}"><i class="bi bi-pencil-square"></i></a> 
                       <a style="background-color: #e1306c;border:none;" class="theme-btn theme-btn-small delete-btn" data-khachhangid="${khachhang.maKhachHang}"><i class="bi bi-x-lg"></i></a>
                      </td>
                   </tr>
@@ -39,8 +39,24 @@ const getAdminKhachHang = async () => {
       });
     }
   });
-
 }
 // Gọi hàm getAllProduct khi trang được tải
 document.addEventListener('DOMContentLoaded', getAdminKhachHang);
+$(document).on('click', '.btn-edit', function (){
+  const username = $(this).data('username');
+  axios.get(`/api-khachhang/get-khachHang-by-username?username=${username}`)
+      .then(response =>{
+        let khachHang = response.data.data;
+        $(`#maKH`).val(khachHang.maKhachHang);
+        $(`#username`).val(khachHang.username);
+        $(`#fullname`).val(khachHang.fullname);
+        $(`#gender`).val(khachHang.gender.toString());
+        $(`#birthday`).val(khachHang.birthday);
+        $(`#address`).val(khachHang.address);
+        $(`#email`).val(khachHang.email);
+        $(`#sdt`).val(khachHang.sdt);
+      })
+})
+
+
 //edit user

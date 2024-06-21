@@ -88,55 +88,41 @@
           <form class="row g-3 mt-1">
             <div class="col-md-6">
               <label class="form-label">Mã khách hàng</label>
-              <input type="text" class="form-control" name="maKhachHang">
+              <input type="text" class="form-control" name="maKhachHang" id="maKH" disabled>
             </div>
             <div class="col-md-6">
               <label class="form-label">Tên tài khoản</label>
-              <input type="text" class="form-control" name="username">
+              <input type="text" class="form-control" name="username" id="username">
             </div>
             <div class="col-6">
               <label class="form-label">Họ và tên</label>
-              <input type="text" class="form-control" name="fullname">
+              <input type="text" class="form-control" name="fullname" id="fullname">
             </div>
             <div class="col-6">
               <label class="form-label">Giới tính</label>
-              <select class="form-select" name="gender">
-                <option selected>Choose...</option>
-                <option value="1">Nam</option>
-                <option value="2">Nữ</option>
+              <select class="form-select" name="gender" id="gender">
+                <option value="">Choose...</option>
+                <option value="true">Nam</option>
+                <option value="false">Nữ</option>
               </select>
             </div>
             <div class="col-md-6">
               <label class="form-label">Email</label>
-              <input type="text" class="form-control" name="email">
+              <input type="text" class="form-control" name="email" id="email">
             </div>
             <div class="col-md-6">
               <label class="form-label">Số điện thoại</label>
-              <input type="text" class="form-control" name="sdt">
+              <input type="text" class="form-control" name="sdt" id="sdt">
             </div>
             <div class="col-md-12">
               <label class="form-label">Địa chỉ</label>
-              <textarea class="form-control" rows="4" name="address"></textarea>
+              <textarea class="form-control" rows="4" name="address" id="address"></textarea>
             </div>
-          </form>
         </div>
         <div class="col-xl-4 mt-2 mb-2">
-          <div class="border rounded">
-            <div class="text-center mt-2 mb-2">IMG</div>
-            <div class="card-body text-center">
-              <form action="" method="post" enctype="multipart/form-data">
-                <img class="img-account-profile rounded-circle mb-2"
-                     width="150px" height="150px" src="" alt="">
-                <div class="small font-italic text-muted mb-4">JPG
-                  or PNG không lớn hơn 5 MB
-                </div>
-                <input type="file" class="form-control" name="photo_file">
-              </form>
-            </div>
-          </div>
-          <div class="mt-2">
-            <div class="col-12">
-              <button formaction="CreateUActor"
+          <div class="mt-2" >
+            <div class="col-12" style="margin-top: 150px;">
+              <button formaction="/create"
                       class="btn btn-success col-5" type="submit">
                 <i class="bi bi-pencil-square"></i> Thêm
               </button>
@@ -156,6 +142,7 @@
               </button>
             </div>
           </div>
+          </form>
         </div>
         <table class="table mt-3">
           <thead>
