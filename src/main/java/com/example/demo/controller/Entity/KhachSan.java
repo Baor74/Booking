@@ -35,6 +35,6 @@ public class KhachSan {
   @Column(name = "Xep_hang")
   private BigDecimal xepHang;
 
-  @OneToMany(mappedBy = "khachSan",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-  private List<Phong> listPhong;
+  @Column(name = "Hinh")
+  private String hinh;
 }

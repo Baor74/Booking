@@ -33,7 +33,7 @@ const getAllProduct = async () => {
               <span class="price__num">$88.00</span>
               <span class="price__text">Mỗi đêm</span>
             </p>
-            <a href="#" class="btn-text">Xem chi tiết<i class="la la-angle-right"></i></a>
+            <a href="/detail" class="btn-text">Xem chi tiết<i class="la la-angle-right"></i></a>
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@ const getTop6 = async () => {
           </div>
           <div class="card-body">
             <h3 class="card-title">
-              <a href="#">${listtop6.tenKhachSan}</a>
+              <a href="/detail">${listtop6.tenKhachSan}</a>
             </h3>
             <div class="card-rating d-flex align-items-center">
 								<span class="ratings d-flex align-items-center me-1"> <i
