@@ -48,8 +48,7 @@ const getHotel = async () => {
           <p class="card-meta">${hotel.diaChi + ", "+hotel.thanhPho}</p>
           <div class="card-rating">
             <span class="bg-warning p-1 rounded text-dark">${hotel.xepHang}/5</span>
-            <span class="review__text">Average</span>
-            <span class="rating__text">(30 Reviews)</span>
+            <span class="rating__text">(30 đánh giá)</span>
           </div>
           <div class="card-price d-flex align-items-center justify-content-between">
             <p>
@@ -57,7 +56,7 @@ const getHotel = async () => {
               <span class="price__num">${avgPrice.toLocaleString()}  VND</span>
               <span class="price__text">/Ngày</span>
             </p>
-            <a href="/detail" class="btn-text">Xem Chi Tiết<i
+            <a href="/hotel/detail/${hotel.maKhachSan}" class="btn-text">Xem Chi Tiết<i
                 class="la la-angle-right"></i></a>
           </div>
         </div>

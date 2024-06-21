@@ -19,4 +19,6 @@ public interface PhongService {
     Phong createOrUpdate(Phong phong);
     @Transactional
     void deletePhongByKhachSan_MaKhachSan(Integer maKhachSan);
+
+    List<Phong> findPhongByKhachSan_MaKhachSanAndTrangThai(Integer maKhachSan, Boolean trangThai);
 }

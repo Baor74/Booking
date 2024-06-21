@@ -23,7 +23,7 @@ public class Phong {
     private KhachSan khachSan;
 
     @Column(name = "So_phong")
-    private String SoPhong;
+    private String soPhong;
 
     @Column(name = "Kieu")
     private String KieuPhong;
@@ -39,6 +39,8 @@ public class Phong {
 
     @Column(name = "Trang_thai")
     @Convert(converter = BooleanConverter.class)
-    private Boolean TrangThai;
+    private Boolean trangThai;
+    @Column(name = "hinh")
+    private String hinh;
 
 }

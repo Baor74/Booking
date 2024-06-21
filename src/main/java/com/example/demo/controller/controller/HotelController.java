@@ -17,7 +17,7 @@ public class HotelController {
 
         return "hotel";
     }
-    @GetMapping("/detail")
+    @GetMapping("/detail/*")
     public String detailHotel(){
         return "detail";
     }
