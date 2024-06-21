@@ -1,217 +1,370 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-
-    <title>Title</title>
-    <!-- Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Angular-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
-    <!--Lấy icon-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-          integrity="sha512-***********" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
-    <style>
-        .product-images img {
-            width: 100%;
-            height: auto;
-        }
-
-        .product-title {
-            margin-top: 20px;
-        }
-
-        .product-price {
-            font-size: 24px;
-            color: red;
-        }
-
-        .benefits-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .benefits-list li {
-            display: flex;
-            align-items: center;
-        }
-
-        .benefits-list li i {
-            margin-right: 10px;
-            color: green;
-        }
-
-        .hotel-images img {
-            width: 100%;
-            height: auto;
-        }
-
-        .hotel-title {
-            margin-top: 20px;
-        }
-
-        .hotel-price {
-            font-size: 24px;
-            color: red;
-        }
-
-        .review-score {
-            font-size: 18px;
-            color: #555;
-        }
-    </style>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="author" content="TechyDevs"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Travel</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet">
+  <!-- CSS Owl Carousel -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" th:href="@{/css/style_home.css}"/>
 </head>
-
 <body>
-<header></header>
-<nav></nav>
-<main>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 hotel-title">
-                <h2>Cozrum Homes - Sonata Residence</h2>
-                <p>41 Nguyễn Thị Thập, Phường Tân Phú, Quận 7, Hồ Chí Minh, Việt Nam</p>
-            </div>
-            <div class="col-12 hotel-images">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="/img/401099204.jpg" alt="Hotel Image 1">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-6">
-                                <img src="/img/401099211.jpg" alt="Hotel Image 2">
-                            </div>
-                            <div class="col-6">
-                                <img src="/img/401099215.jpg" alt="Hotel Image 3">
-                            </div>
-                            <div class="col-6">
-                                <img src="/img/401099217.jpg" alt="Hotel Image 4">
-                            </div>
-                            <div class="col-6">
-                                <img src="/img/401099204.jpg" alt="Hotel Image 5">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <h3 class="hotel-price">từ 495.197 đ <a href="#" class="btn btn-primary">Xem giá</a></h3>
-
-            </div>
-
+<th:block th:replace="layout/header.html :: header"></th:block>
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+      <li class="breadcrumb-item"><a href="#">Chi tiết</a></li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-12">
+      <div class="card p-0 pb-0">
+        <div class=" card-body d-flex justify-content-between flex-wrap">
+          <img class="rounded" src="/img/blog-img3.jpg" alt="blog-img" width="450"/>
+          <div class="" style="margin-left: -300px;">
+            <div class="badge text-bg-dark"><i class="bi bi-airplane"></i> Khách sạn</div>
+            <div class="badge text-bg-dark"><i class="bi bi-currency-dollar"></i> Thanh toán</div>
+            <div class="badge text-bg-dark"><i class="bi bi-house"></i> 4.5</div>
+            <h1 class="h3 mt-2 mb-1"> Khach san Ho Chi Minh</h1>
+            <h2 class="card-title text-danger"> 1000 VNĐ</h2>
+            <p class="card-text"> Boston, MA, Hoa Kỳ</p>
+            <p class="card-text"> 4,7/5</p>
+            <p class="card-text"> Đánh giá: (4.209 Đánh giá)</p>
+          </div>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a href="#" class="btn btn-sm btn-white px-2">
+                <i class="bi bi-heart"></i>
+              </a>
+            </li>
+            <li class="list-inline-item dropdown">
+              <a href="#" class="btn btn-sm btn-white px-2" role="button" id="dropdownShare"
+                 data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-share"></i>
+              </a>
+              <ul class="dropdown-menu min-w-auto shadow rounded" aria-labelledby="dropdownShare">
+                <li>
+                  <a class="dropdown-item" href="#"> <i class="bi bi-twitter"></i>Twitter</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="bi bi-facebook"></i>Facebook</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="bi bi-linkedin"></i>LinkedIn</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="bi bi-copy"></i>Copy link</a>
+                </li>
+              </ul>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="btn btn-sm btn-white px-2">
+                <i class="bi bi-exclamation-triangle"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="row">
-            <div class="col-sm-8">
-                <div class="card">
-                    <h4><a href="#" class="btn btn-info">
-                        Domestic Deal
-                    </a></h4>
-                    <h2>Tan Son Nhat Sai Gon Hotel</h2>
-                    <a href="#">202 Hoàng Văn Thụ, Quận Phú Nhuận, Phú Nhuận, Hồ Chí Minh, Việt Nam, 70000</a>
-                </div>
-                <div class="card">
-                    <h4>Điểm nổi bật</h4>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            Thích hợp cho các hoạt động
-                        </div>
-                        <div class="col-sm-3">
-                            Bữa sáng tuyệt vời
-                        </div>
-                        <div class="col-sm-3">
-                            Thêm vệ sinh
-                        </div>
-                        <div class="col-sm-3">
-                            Đưa đón sân bay
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="review-score">7.4 Rất tốt</h4>
-                        <p>2,767 bài đánh giá</p>
-                    </div>
-                </div>
-            </div>
+        <div class="card-footer bg-transparent border-top py-0">
+          <ul class="nav nav-tabs nav-bottom-line nav-responsive border-0" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link mb-0 active" data-bs-toggle="tab" href="#tab-1"
+                 aria-selected="true"
+                 role="tab">Chi tiết</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-3" aria-selected="false"
+                 role="tab"
+                 tabindex="-1">Đánh giá và bình luận</a>
+            </li>
+          </ul>
         </div>
-        <div class="container mt-4">
-            <h2 class="product-title">Phòng Deluxe 2 Giường đơn (Deluxe Twin)</h2>
-            <div class="row">
-                <!-- Image Section -->
-                <div class="col-md-4">
-                    <div class="product-images mb-3">
-                        <img src="img/401099204.jpg" alt="Product Image">
-                    </div>
-                    <a href="#" class="text-decoration-none">Xem ảnh và chi tiết</a>
-                </div>
-
-                <!-- Details Section -->
-                <div class="col-md-8">
-                    <div class="row mb-3">
-                        <div class="col-md-6 card">
-                            <h5>Giá thấp nhất!</h5>
-                            <ul class="benefits-list">
-                                <li><i class="bi bi-check-circle"></i>Miễn phí hủy trước 26 tháng 5 2024</li>
-                                <li><i class="bi bi-check-circle"></i>Bữa sáng cho 2 - <s>500.000 ₫</s> Đã bao gồm
-                                </li>
-                                <li><i class="bi bi-check-circle"></i>Không phải thanh toán ngay - Chỉ thanh toán
-                                    vào 24 tháng 5 2024
-                                </li>
-                                <li><i class="bi bi-check-circle"></i>Giảm giá Thức ăn 10%, Bãi đậu xe, Cà phê &
-                                    trà, Nhận phòng nhanh, Wifi cao cấp miễn phí, WiFi miễn phí, Nước uống, Phòng
-                                    tập
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 text-center card">
-                            <p class="product-price">1.322.751 ₫</p>
-                            <p class="text-danger">66% CHỈ HÔM NAY!</p>
-                        </div>
-                        <div class="col-md-3 text-center card">
-                            <button class="btn btn-primary mb-2">Đặt ngay</button>
-                            <button class="btn btn-secondary mb-2">Thêm vào xe đẩy hàng</button>
-                            <p class="text-success">KHÔNG SỢ RỦI RO<br>Hủy không tốn phí</p>
-                            <p class="text-success">Còn ít phòng</p>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-md-6 card">
-                            <h5>Chính sách hủy</h5>
-                            <ul class="benefits-list">
-                                <li><i class="bi bi-check-circle"></i>Bữa sáng cho 2 - <s>500.000 ₫</s> Đã bao gồm
-                                </li>
-                                <li><i class="bi bi-check-circle"></i>Bãi đậu xe, Nhận phòng nhanh, WiFi miễn phí,
-                                    Phòng tập
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-3 text-center card">
-                            <p class="product-price">1.592.011 ₫</p>
-                            <p class="text-danger">59% CHỈ HÔM NAY!</p>
-                        </div>
-                        <div class="col-md-3 text-center card">
-                            <button class="btn btn-primary mb-2">Đặt ngay</button>
-                            <button class="btn btn-secondary mb-2">Thêm vào xe đẩy hàng</button>
-                            <p class="text-danger">Phòng cuối cùng của chúng tôi!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</main>
-<footer>
+  </div>
+</div>
+<section class="pt-3">
+  <div class="container">
+    <div class="tab-content mb-0" id="tour-pills-tabContent">
+      <div class="tab-pane fade active show" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-7 col-xl-8">
+            <div class="card bg-transparent mb-4">
+              <div class="card-header bg-transparent border-bottom px-3 pt-2">
+                <h4 class="mb-0">Thông tin về Khách sạn và Khu nghỉ dưỡng Hilton</h4>
+              </div>
+              <div class="card-body px-0 pb-0">
+                <p class="ms-3">
+                  Tọa lạc ở Vũng Tàu, Sóng Homestay - Căn Hộ The Sóng Vũng Tàu Nghỉ Dưỡng Biển Cao
+                  Cấp 5 Sao - The Song Vung Tau Condotel 5 Star Beach View Apartment cung cấp Wi-Fi
+                  miễn phí, nơi khách có thể trải nghiệm hồ bơi ngoài trời, khu vườn và sân hiên.
+                  Chỗ đậu xe riêng có sẵn trong khuôn viên. Chỗ nghỉ có điều hòa, bếp đầy đủ tiện
+                  nghi, TV màn hình phẳng, cũng như phòng tắm riêng với vòi sen, máy sấy tóc và dép
+                  đi trong phòng. Một số căn có ban công và/hoặc sân trong nhìn ra biển. Khách có
+                  thể ghé công viên nước tại căn hộ. Sóng Homestay - Căn Hộ The Sóng Vũng Tàu Nghỉ
+                  Dưỡng Biển Cao Cấp 5 Sao - The Song Vung Tau Condotel 5 Star Beach View Apartment
+                  cách Bãi Sau 9 phút đi bộ và Khu du lịch sinh thái văn hóa Hồ Mây 3.8 km.
+                </p>
 
-</footer>
+              </div>
+            </div>
+            <div class="card bg-transparent mb-3">
+              <div class="card-header bg-transparent border-bottom px-0">
+                <h4 class="ms-3 mt-2">Ảnh liên quan</h4>
+              </div>
+              <div class="card-body">
+                <div class="row p-2">
+                  <div class="col-4">
+                    <img class="rounded" src="/img/blog-img3.jpg" alt="blog-img" width="250"/>
+                  </div>
+                  <div class="col-4">
+                    <img class="rounded" src="/img/blog-img3.jpg" alt="blog-img" width="250"/>
+                  </div>
+                  <div class="col-4">
+                    <img class="rounded" src="/img/blog-img3.jpg" alt="blog-img" width="250"/>
+                  </div>
+                </div>
+                <div class="row p-2">
+                  <div class="col-4">
+                    <img class="rounded" src="/img/blog-img3.jpg" alt="blog-img" width="250"/>
+                  </div>
+                  <div class="col-4">
+                    <img class="rounded" src="/img/blog-img3.jpg" alt="blog-img" width="250"/>
+                  </div>
+                  <div class="col-4">
+                    <img class="rounded" src="/img/blog-img3.jpg" alt="blog-img" width="250"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-xl-4">
+            <div class="card shadow mb-3">
+              <a href="/cart" class="btn btn-primary" >Đặt Ngay</a>
+            </div>
+            <div class="card shadow mb-4">
+              <div class="card-header border-bottom">
+                <h5 class="mb-0">Địa chỉ</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-borderless my-3">
+                  <h2>LIÊN HỆ TƯ VẤN</h2>
+                  <li class="list-group-item">
+                    <a href="#" class="h6 mb-0">
+                      <i class="bi fa-fw bi-telephone-forward me-2"></i> Hotline : 1900 0208
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#" class="h6 mb-0">
+                      <i class="bi fa-fw bi-telephone-forward me-2"></i> Tel : 0919 925 302
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#" class="h6 mb-0">
+                      <i class="bi fa-fw bi-envelope me-2"></i>kieukienquocvn@gmail.com
+                    </a>
+                  </li>
+                </ul>
+                <ul class="list-inline mb-0 mt-3">
+                  <li class="list-inline-item">Theo dõi chúng tôi :</li>
+                  <li class="list-inline-item">
+                    <a class="btn btn-sm px-2 bg-facebook mb-0" href="#">
+                      <i class="bi bi-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn btn-sm shadow px-2 bg-instagram mb-0" href="#">
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn btn-sm shadow px-2 bg-twitter mb-0" href="#">
+                      <i class="bi bi-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn btn-sm shadow px-2 bg-linkedin mb-0" href="#">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card shadow">
+              <div class="card-header border-bottom">
+                <h5 class="mb-0">Liên quan</h5>
+              </div>
+              <div class="card-body d-flex">
+                <img src="/img/blog-img3.jpg" style="width: 200px;" class="card-img-top">
+                <div class="ms-2">
+                  <h6 class="card-title ">Tour Hội An 3 ngày 2 đêm từ Hà Nội giá Sốc.</h6>
+                  <i class="bi bi-clock"></i>3 ngày 2 đêm
+                  <p class="text-warning fw-bold">3.090.000 VNĐ</p>
+                </div>
+              </div>
+              <div class="card-body d-flex">
+                <img src="/img/blog-img3.jpg" style="width: 200px;" class="card-img-top">
+                <div class="ms-2">
+                  <h6 class="card-title ">Combo du lịch Đà Nẵng - Hội An giá rẻ.</h6>
+                  <i class="bi bi-clock"></i>4 ngày 3 đêm
+                  <p class="text-warning fw-bold">2.790.000 VNĐ</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+
+      <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+        <div class="card">
+          <div class="card-body p-4">
+            <h4 class="mb-0">Những ý kiến ​​gần đây</h4>
+            <p class="fw-light mb-4 pb-2">Phần bình luận mới nhất của người dùng</p>
+            <div class="d-flex flex-start">
+              <img class="rounded-circle shadow-1-strong me-3" src="img/kh1.jpeg" alt="avatar"
+                   width="60"
+                   height="60"/>
+              <div>
+                <h6 class="fw-bold mb-1">Kiều Kiến Quốc</h6>
+                <div class="d-flex align-items-center mb-3">
+                  <p class="mb-0">1/16/2024</p>
+                  <a href="#!" class="link-muted"><i class="bi bi-pen"></i></a>
+                  <a href="#!" class="link-muted"><i class="bi bi-arrow-clockwise"></i></a>
+                  <a href="#!" class="link-muted"><i class="bi bi-heart"></i></a>
+                </div>
+                <p class="mb-0">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy
+                  text ever
+                  since the 1500s, when an unknown printer took a galley of type
+                  and
+                  scrambled it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-0"/>
+
+          <div class="card-body p-4">
+            <div class="d-flex flex-start">
+              <img class="rounded-circle shadow-1-strong me-3" src="img/kh2.jpeg" alt="avatar"
+                   width="60"
+                   height="60"/>
+              <div>
+                <h6 class="fw-bold mb-1">Kiều Kiến Quốc</h6>
+                <div class="d-flex align-items-center mb-3">
+                  <p class="mb-0">1/16/2024</p>
+                  <a href="#" class="link-muted"><i class="bi bi-pen"></i></a>
+                  <a href="#" class="link-muted"><i class="bi bi-arrow-clockwise"></i></a>
+                  <a href="#" class="link-muted"><i class="bi bi-heart"></i></a>
+                </div>
+                <p class="mb-0">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy
+                  text ever
+                  since the 1500s, when an unknown printer took a galley of type
+                  and
+                  scrambled it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-0" style="height: 1px;"/>
+
+          <div class="card-body p-4">
+            <div class="d-flex flex-start">
+              <img class="rounded-circle shadow-1-strong me-3" src="img/kh3.jpeg" alt="avatar"
+                   width="60"
+                   height="60"/>
+              <div>
+                <h6 class="fw-bold mb-1">Kiều Kiến Quốc</h6>
+                <div class="d-flex align-items-center mb-3">
+                  <p class="mb-0">1/16/2024</p>
+                  <a href="#!" class="link-muted"><i class="bi bi-pen"></i></a>
+                  <a href="#!" class="link-muted"><i class="bi bi-arrow-clockwise"></i></a>
+                  <a href="#!" class="link-muted"><i class="bi bi-heart"></i></a>
+                </div>
+                <p class="mb-0">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy
+                  text ever
+                  since the 1500s, when an unknown printer took a galley of type
+                  and
+                  scrambled it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-0"/>
+
+          <div class="card-body p-4">
+            <div class="d-flex flex-start">
+              <img class="rounded-circle shadow-1-strong me-3" src="img/FT-1.jpg" alt="avatar"
+                   width="60"
+                   height="60"/>
+              <div>
+                <h6 class="fw-bold mb-1">Kiều Kiến Quốc</h6>
+                <div class="d-flex align-items-center mb-3">
+                  <p class="mb-0">1/16/2024</p>
+                  <a href="#!" class="link-muted"><i class="bi bi-pen"></i></a>
+                  <a href="#!" class="link-muted"><i class="bi bi-arrow-clockwise"></i></a>
+                  <a href="#!" class="link-muted"><i class="bi bi-heart"></i></a>
+                </div>
+                <p class="mb-0">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy
+                  text ever
+                  since the 1500s, when an unknown printer took a galley of type
+                  and
+                  scrambled it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label class="mt-3">Bình luận:</label>
+        <div class="form-floating  d-flex align-content-center">
+          <textarea class="form-control  mt-2" id="floatingTextarea"></textarea>
+        </div>
+        <div class="text-end">
+          <button type="button" class="btn btn-primary">Đăng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<th:block th:replace="layout/footer.html :: footer"></th:block>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- JavaScript Owl Carousel -->
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- JavaScript Bootstrap 5 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="/js/home_JS.js"></script>
 </body>
-
 </html>
