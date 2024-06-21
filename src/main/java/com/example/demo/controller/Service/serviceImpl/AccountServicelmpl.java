@@ -14,4 +14,9 @@ public class AccountServicelmpl implements AccountService {
   public KhachHang addKhachHang(KhachHang khachHang) {
     return repo.save(khachHang);
   }
+
+  @Override
+  public KhachHang getKhachHangById(int id) {
+    return repo.findKhachHangByUsername(getKhachHangById(id).getUsername());
+  }
 }
