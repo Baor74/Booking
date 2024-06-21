@@ -1,4 +1,4 @@
-package com.example.demo.controller.Responsitori;
+package com.example.demo.controller.Responsitory;
 
 
 import com.example.demo.controller.Entity.Phong;
@@ -16,4 +16,9 @@ public interface PhongRepo extends JpaRepository<Phong, Integer> {
 
     @Query(value = "SELECT * FROM Phong p WHERE p.gia <?1", nativeQuery = true)
     List<Phong> sortPrice(Float PriceLess);
+
+    @Query(value = "SELECT p.Ma_phong AS Ma_phong_p, ct.Ma_phong AS Ma_phong_ct FROM Phong p INNER JOIN Chi_tiet_dat_phong ct ON p.Ma_phong = ct.Ma_phong WHERE ct.Ma_phong = ?1", nativeQuery = true)
+    List<Phong> chiTietToMKS(Integer id);
+
+
 }

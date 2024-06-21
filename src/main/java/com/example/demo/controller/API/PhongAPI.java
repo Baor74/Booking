@@ -1,7 +1,6 @@
 package com.example.demo.controller.API;
 
 import com.example.demo.controller.Entity.Phong;
-import com.example.demo.controller.Responsitori.PhongRepo;
 import com.example.demo.controller.Service.PhongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -63,6 +62,22 @@ public class PhongAPI {
             rs.put("status", false);
             rs.put("message", "Call api failed");
             rs.put("data", null);
+        }
+        return ResponseEntity.ok(rs);
+    }
+
+    @GetMapping("/get-mks")
+    public ResponseEntity<?> doGetMKS(@RequestParam("id") Integer id) {
+        Map<String, Object> rs = new HashMap();
+        try {
+            rs.put("status", true);
+            rs.put("message", "Call api success");
+            rs.put("data", phongService.chiTietToMKS(id));
+        } catch (Exception ex) {
+            rs.put("status", false);
+            rs.put("message", "Call api failed");
+            rs.put("data", ex);
+            System.out.println(ex);
         }
         return ResponseEntity.ok(rs);
     }

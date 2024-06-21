@@ -1,6 +1,6 @@
 package com.example.demo.controller.Service.serviceImpl;
 
-import com.example.demo.controller.Responsitori.PhongRepo;
+import com.example.demo.controller.Responsitory.PhongRepo;
 import com.example.demo.controller.Entity.Phong;
 import com.example.demo.controller.Service.PhongService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +24,8 @@ public class PhongImp implements PhongService {
     public List<Phong> findAll() {
         return repo.findAll();
     }
+    @Override
+    public List<Phong> chiTietToMKS(Integer id){return repo.chiTietToMKS(id);}
 }
 
 

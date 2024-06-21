@@ -9,7 +9,7 @@ public class BooleanConverter implements AttributeConverter<Boolean, Integer> {
     @Override
     public Integer convertToDatabaseColumn(Boolean attribute) {
         if (attribute == null) {
-            return null;
+            return 0; // Tránh trả về null để tránh lỗi NOT NULL
         }
         return attribute ? 1 : 0;
     }
@@ -22,3 +22,4 @@ public class BooleanConverter implements AttributeConverter<Boolean, Integer> {
         return dbData == 1;
     }
 }
+

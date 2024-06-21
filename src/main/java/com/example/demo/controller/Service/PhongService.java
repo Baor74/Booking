@@ -11,4 +11,5 @@ public interface PhongService {
     List<Phong> findAll();
     List<Phong> findPhongByKhachsan(String KhachSan);
     List<Phong> sortPrice(Float PriceLess);
+    List<Phong> chiTietToMKS(Integer id);
 }
