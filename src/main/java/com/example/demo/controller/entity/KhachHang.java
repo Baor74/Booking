@@ -41,4 +41,5 @@ public class KhachHang {
 
     @Column(name = "SDT", unique = true)
     private String sdt;
+
 }
