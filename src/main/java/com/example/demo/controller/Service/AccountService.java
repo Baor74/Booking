@@ -1,8 +1,10 @@
 package com.example.demo.controller.Service;
 
-import com.example.demo.controller.Entity.KhachHang;
+
+import com.example.demo.controller.Entity.Account;
+
 
 public interface AccountService {
-  KhachHang addKhachHang(KhachHang khachHang);
-  KhachHang getKhachHangById(int id);
+  Account Register (Account account);
+  Account Login (String username, String password);
 }
