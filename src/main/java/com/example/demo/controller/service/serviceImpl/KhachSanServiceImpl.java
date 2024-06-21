@@ -34,6 +34,8 @@ public class KhachSanServiceImpl implements KhachSanService {
 
   @Override
   public List<KhachSan> findThanhPhoAndSucChua(String thanhPho, int sucChua) {
+
+
     return khachSanRepo.findDistinctByThanhPhoAndListPhong_SucChuaGreaterThanEqual(thanhPho,sucChua);
   }
 
