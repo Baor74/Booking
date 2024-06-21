@@ -1,9 +1,7 @@
 package com.example.demo.controller.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-
 import lombok.*;
 
 @Data
@@ -42,4 +40,5 @@ public class Phong {
     @Column(name = "Trang_thai")
     @Convert(converter = BooleanConverter.class)
     private Boolean TrangThai;
+
 }
