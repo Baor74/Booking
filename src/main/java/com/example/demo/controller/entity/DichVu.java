@@ -1,5 +1,6 @@
 package com.example.demo.controller.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,9 +18,10 @@ public class DichVu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_dich_vu")
     private Long maDichVu;
-
-    @Column(name = "ma_khach_san")
-    private Long maKhachSan;
+    @ManyToOne
+    @JoinColumn(name = "ma_khach_san")
+    @JsonBackReference
+    private KhachSan khachSan;
 
     @Column(name = "ten_dich_vu")
     private String tenDichVu;

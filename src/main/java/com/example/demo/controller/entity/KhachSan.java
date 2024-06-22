@@ -41,4 +41,9 @@ public class KhachSan {
   @OneToMany(mappedBy = "khachSan", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
   @JsonManagedReference
   private List<Phong> listPhong;
+
+  @OneToMany(mappedBy = "khachSan", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+  @JsonManagedReference
+  private List<DichVu> listDichVu;
+
 }

@@ -59,7 +59,14 @@ const getHotel = async () => {
                 container.html('<p>Không tìm thấy khách sạn phù hợp.</p>');
                 return;
             }
+
             let hotel = response.data.data;
+            let dichVuHtml = '';
+
+            // Duyệt qua danh sách dịch vụ và tạo HTML cho mỗi dịch vụ
+            hotel.listDichVu.forEach(dichVu => {
+                dichVuHtml += `<p class="card-text">${dichVu.tenDichVu}: ${dichVu.moTa}</p>`;
+            });
                 let html = `
                 <div class="d-flex flex-row">
                     <img class="rounded" src="/img/${hotel.hinh}" alt="blog-img" width="450"/>
@@ -68,6 +75,8 @@ const getHotel = async () => {
                         <p class="card-text"> ${hotel.diaChi+", "+hotel.thanhPho}</p>
                         <p class="card-text">${hotel.xepHang}/5 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
                         <p class="card-text"> Đánh giá: (5 Đánh giá)</p>
+                        <h3>Dịch vụ</h3>
+                        ${dichVuHtml}
                     </div>
                 </div>
                 `;
