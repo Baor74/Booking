@@ -1,7 +1,6 @@
 package com.example.demo.controller.controller;
 
 import com.example.demo.controller.dto.KhachHangDTO;
-import com.example.demo.controller.dto.KhachSanDTO;
 import com.example.demo.controller.entity.KhachHang;
 import com.example.demo.controller.responsitory.KhachHangRepo;
 import com.example.demo.controller.responsitory.KhachSanRepo;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class AdminController {
@@ -30,9 +29,7 @@ public class AdminController {
     return "/admin/user-list";
   }
   @GetMapping("/create")
-  public String getCreate(@RequestBody KhachHangDTO khachHangDTO) {
-    KhachHang khachHang = new KhachHang();
-
+  public String getCreate() {
     return "/admin/user-list";
   }
 }

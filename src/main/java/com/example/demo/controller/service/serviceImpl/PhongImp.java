@@ -1,7 +1,7 @@
 package com.example.demo.controller.service.serviceImpl;
 
-import com.example.demo.controller.Responsitori.PhongRepo;
 import com.example.demo.controller.entity.Phong;
+import com.example.demo.controller.responsitory.PhongRepo;
 import com.example.demo.controller.service.PhongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +33,11 @@ public class PhongImp implements PhongService {
     @Override
     public void deletePhongByKhachSan_MaKhachSan(Integer maKhachSan) {
         repo.deletePhongByKhachSan_MaKhachSan(maKhachSan);
+    }
+
+    @Override
+    public List<Phong> findPhongByKhachSan_MaKhachSanAndTrangThai(Integer maKhachSan, Boolean trangThai) {
+        return repo.findPhongByTrangThaiAndAndKhachSan_MaKhachSan(trangThai,maKhachSan);
     }
 }
 

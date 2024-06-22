@@ -1,12 +1,14 @@
 const getAdminKhachHang = async () => {
   let productContainer = $('#adminkhachhang');
+    let index = 0
   await axios.get('/admin-khachhang/getAllkhachHang')
   .then(response => {
     productContainer.html('');
     response.data.data.forEach(khachhang => {
+
       let html = `
                 <tr>
-                    <td>${khachhang.maKhachHang}</td>
+                    <td>${index+=1}</td>
                     <td>${khachhang.username}</td>
                     <td>${khachhang.fullname}</td>
                     <td>${khachhang.gender ? "Nam" : "Nữ"}</td>
@@ -29,12 +31,14 @@ const getAdminKhachHang = async () => {
   productContainer.on('click', '.delete-btn', async function () {
     let khachHangId = $(this).data('khachhangid');
     if (confirm('Bạn có chắc chắn muốn xóa khách hàng này?')) {
-      await axios.delete(`/admin-khachhang/deleteKhachHang/${khachHangId}`)
+      await axios.delete(`/api-khachhang/delete-khachHang-by-makh?maKH=${khachHangId}`)
       .then(response => {
+
         alert(response.data.message);
         getAdminKhachHang(); // Cập nhật lại bảng sau khi xóa thành công
       })
       .catch(error => {
+          console.log(error);
         alert('Xóa khách hàng thất bại');
       });
     }
@@ -57,6 +61,5 @@ $(document).on('click', '.btn-edit', function (){
         $(`#sdt`).val(khachHang.sdt);
       })
 })
-
 
 //edit user

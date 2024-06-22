@@ -1,9 +1,7 @@
 package com.example.demo.controller.entity;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-
 import lombok.*;
 
 @Data
@@ -25,7 +23,7 @@ public class Phong {
     private KhachSan khachSan;
 
     @Column(name = "So_phong")
-    private String SoPhong;
+    private String soPhong;
 
     @Column(name = "Kieu")
     private String KieuPhong;
@@ -37,9 +35,13 @@ public class Phong {
     private String MoTa;
 
     @Column(name = "Suc_chua")
-    private int sucChua;
+    private Integer sucChua;
 
     @Column(name = "Trang_thai")
     @Convert(converter = BooleanConverter.class)
-    private Boolean TrangThai;
+    private Boolean trangThai;
+
+    @Column(name = "hinh")
+    private String hinh;
+
 }

@@ -1,5 +1,4 @@
-package com.example.demo.controller.Responsitori;
-
+package com.example.demo.controller.responsitory;
 
 import com.example.demo.controller.entity.Phong;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,5 +17,8 @@ public interface PhongRepo extends JpaRepository<Phong, Integer> {
     List<Phong> sortPrice(Float PriceLess);
 
     Phong save(Phong phong);
+
     void deletePhongByKhachSan_MaKhachSan(Integer maKhachSan);
+
+    List<Phong> findPhongByTrangThaiAndAndKhachSan_MaKhachSan(Boolean trangThai, Integer maKhachHang);
 }

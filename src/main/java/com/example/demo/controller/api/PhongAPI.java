@@ -78,4 +78,18 @@ public class PhongAPI {
         }
         return ResponseEntity.ok(result);
     }
+    @GetMapping("/find-phong-by-ma-khach-san")
+    public ResponseEntity<?> findPhongByMaKhachSan(@RequestParam("maKhachSan") Integer maKhachSan, Boolean trangThai){
+        Map<String,Object> result = new HashMap<>();
+        try {
+            result.put("status", true);
+            result.put("message","Call api success");
+            result.put("data",phongService.findPhongByKhachSan_MaKhachSanAndTrangThai(maKhachSan,trangThai));
+        }catch (Exception e){
+            result.put("status", true);
+            result.put("message","Call api success");
+            result.put("data",null);
+        }
+        return ResponseEntity.ok(result);
+    }
 }
