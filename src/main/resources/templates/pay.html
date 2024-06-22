@@ -187,27 +187,25 @@
             <button type="button" class="btn btn-dark btn-block btn-lg" data-bs-toggle="modal"
                     data-bs-target="#exampleModal1">
               THANH TOÁN
-            </button>
-            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
-                 aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Xác nhận thanh toán</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Bạn có chắc muốn thanh toán?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                    <button type="button" class="btn btn-primary">Thanh toán</button>
-                  </div>
+            </button><div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Xác nhận thanh toán</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Bạn có chắc muốn thanh toán?
+                </div>
+                <div class="modal-footer" id="alertContainer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                  <button type="button" class="btn btn-primary" id="successButton">Thanh toán</button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+
+          </div>
       </div>
     </div>
   </div>
@@ -226,5 +224,36 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="/js/home_JS.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const successButton = document.getElementById('successButton');
+
+    successButton.addEventListener('click', function() {
+      setTimeout(() => {
+        window.location.href = '/index';
+      }, 200);
+    });
+
+    // Hàm để hiển thị thông báo
+    function showAlert(message, type) {
+      const alertContainer = document.getElementById('alertContainer');
+      const alertElement = document.createElement('div');
+      alertElement.className = `alert alert-${type} alert-dismissible fade show`;
+      alertElement.role = 'alert';
+      alertElement.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+      alertContainer.appendChild(alertElement);
+
+      // Tự động xóa thông báo sau 3 giây
+      setTimeout(() => {
+        if (alertElement) {
+          alertElement.remove();
+        }
+      }, 3000);
+    }
+  });
+</script>
 </body>
 </html>

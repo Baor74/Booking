@@ -31,7 +31,7 @@ const getRoom = async () => {
                         <span class="price__text">/Ngày</span>
                     </p>
             <p class="card-meta">${phong.moTa}</p>
-            <a href="#" class="btn-text">Đặt ngay<i
+            <a href="/payment" class="btn-text">Đặt ngay<i
                 class="la la-angle-right"></i></a>
           </div>
         </div>
