@@ -35,11 +35,12 @@ public class Phong {
     private String MoTa;
 
     @Column(name = "Suc_chua")
-    private int sucChua;
+    private Integer sucChua;
 
     @Column(name = "Trang_thai")
     @Convert(converter = BooleanConverter.class)
     private Boolean trangThai;
+
     @Column(name = "hinh")
     private String hinh;
 
