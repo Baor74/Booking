@@ -23,20 +23,10 @@ public class LoginController {
     public String signin() {
         return "account/DangNhap";
     }
-    @PostMapping("/sign-in")
-    public String signin_signin(Model model) {
-        return "";
-    }
 
     @GetMapping("/sign-up")
     public String signup() {
         return "account/DangKy";
     }
 
-    @PostMapping("/sign-up")
-    public String signup_signup(Model model, @Validated @ModelAttribute("account") KhachHang khachHang) {
-
-        return "";
-    }
-    
 }
