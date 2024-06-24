@@ -177,8 +177,6 @@
             </div>
             <hr class="my-4">
             <div class=" mb-5">
-              <h5 class="text-uppercase">TỔNG CỘNG</h5>
-              <h5>{{total() | number}} VNĐ</h5>
             </div>
             <p class="note-final">
               * Khi Quý khách nhấn nút "Hoàn thành đặt tour" cũng đồng nghĩa là Quý khách đã đồng ý với các
@@ -229,6 +227,7 @@
     const successButton = document.getElementById('successButton');
 
     successButton.addEventListener('click', function() {
+      alert("Thanh toán thành công")
       setTimeout(() => {
         window.location.href = '/index';
       }, 200);
