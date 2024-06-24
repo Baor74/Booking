@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/khachsan-api")
+@RequestMapping("/api/khachsan-api")
 
 public class KhachSanAPI {
   @Autowired
@@ -64,7 +64,7 @@ public class KhachSanAPI {
     }
     return ResponseEntity.ok(result);
   }
-  @GetMapping("findKhachSanById")
+  @GetMapping("/find-khach-san-by-ma-khach-san")
   public ResponseEntity<?> findKhachSanById(@RequestParam("maKhachSan") int maKhachSan) {
     Map<String, Object> result = new HashMap<>();
     try {

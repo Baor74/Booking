@@ -1,5 +1,6 @@
 package com.example.demo.controller.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -38,5 +39,11 @@ public class KhachSan {
   private String hinh;
 
   @OneToMany(mappedBy = "khachSan", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+  @JsonManagedReference
   private List<Phong> listPhong;
+
+  @OneToMany(mappedBy = "khachSan", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+  @JsonManagedReference
+  private List<DichVu> listDichVu;
+
 }

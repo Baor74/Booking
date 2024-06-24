@@ -47,13 +47,13 @@ const getHotel = async () => {
           </h3>
           <p class="card-meta">${hotel.diaChi + ", "+hotel.thanhPho}</p>
           <div class="card-rating">
-            <span class="bg-warning p-1 rounded text-dark">${hotel.xepHang}/5</span>
+            <span class="bg-warning p-1 rounded text-dark">${hotel.xepHang}/5 <i class="fa-solid fa-star" style="color: #FFD43B;"></i></span>
             <span class="rating__text">(30 đánh giá)</span>
           </div>
           <div class="card-price d-flex align-items-center justify-content-between">
             <p>
               <span class="price__from">Khoảng</span>
-              <span class="price__num">${avgPrice.toLocaleString()}  VND</span>
+              <span class="price__num">${avgPrice.toLocaleString()}.000  VND</span>
               <span class="price__text">/Ngày</span>
             </p>
             <a href="/hotel/detail/${hotel.maKhachSan}" class="btn-text">Xem Chi Tiết<i

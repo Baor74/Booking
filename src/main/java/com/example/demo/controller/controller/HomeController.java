@@ -28,6 +28,8 @@ public class HomeController {
   public String shop() {
     return "hotel";
   }
+  @GetMapping("/payment")
+  public String getPayment(){return "pay";}
 
 
 }
